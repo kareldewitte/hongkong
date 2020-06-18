@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="401px" height="511px" viewBox="0 0 401 511" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>assays-report-illo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-Datasheet" transform="translate(-56.000000, 0.000000)">
+            <g id="assays-report-illo" transform="translate(56.000000, 0.000000)">
+                <g id="a-link" transform="translate(56.888889, 0.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <polygon id="a" points="0 0 343.22963 0 343.22963 455.247644 0 455.247644"></polygon>
+                </g>
+                <polygon id="Shape" stroke="#D5D5D5" points="57.837037 0.948148148 399.17037 0.948148148 399.17037 454.299199 57.837037 454.299199"></polygon>
+                <g id="b-link" transform="translate(37.925926, 18.962963)" fill="#FFFFFF" fill-rule="nonzero">
+                    <polygon id="b" points="0 0 343.22963 0 343.22963 453.351348 0 453.351348"></polygon>
+                </g>
+                <polygon id="Shape" stroke="#D5D5D5" points="38.8740741 19.9111111 380.207407 19.9111111 380.207407 471.365865 38.8740741 471.365865"></polygon>
+                <g id="c-link" transform="translate(18.962963, 37.925926)" fill="#FFFFFF" fill-rule="nonzero">
+                    <polygon id="c" points="0 0 343.22963 0 343.22963 453.351348 0 453.351348"></polygon>
+                </g>
+                <polygon id="Shape" stroke="#D5D5D5" points="19.9111111 38.8740741 361.244444 38.8740741 361.244444 490.328828 19.9111111 490.328828"></polygon>
+                <g id="Group" transform="translate(0.000000, 56.888889)">
+                    <g id="d-link" fill="#FFFFFF" fill-rule="nonzero">
+                        <rect id="d" x="0" y="0" width="343.22963" height="453.351348"></rect>
+                    </g>
+                    <rect id="Rectangle-path" stroke="#D5D5D5" x="0.948148148" y="0.948148148" width="341.333333" height="451.455052"></rect>
+                </g>
+                <path d="M171.219341,87.3176542 L153.928541,97.3007743 C153.725359,97.4181403 153.6,97.635064 153.6,97.8697961 L153.6,117.835476 C153.6,118.070208 153.725359,118.287131 153.928541,118.404497 L168.751851,126.96282 C169.189905,127.215781 169.737473,126.899579 169.737473,126.393798 L169.737473,107.206772 C169.737473,106.97204 169.612255,106.755117 169.408932,106.637751 L161.891199,102.297172 C161.453145,102.044211 160.905577,102.360412 160.905577,102.866334 L160.905577,105.564069 C160.905577,105.798801 161.030796,106.015865 161.234118,106.133231 L166.086928,108.934871 L166.086928,121.208801 L157.250545,116.107237 L157.250545,99.5978945 L171.547882,91.3432936 L185.845219,99.5978945 L185.845219,116.107237 L177.008836,121.208801 L177.008836,108.934871 L181.863469,106.13225 C182.066651,106.014743 182.19201,105.79782 182.19201,105.563088 L182.19201,102.865352 C182.19201,102.359431 181.644442,102.04337 181.206388,102.29619 L173.686832,106.637751 C173.483509,106.755117 173.358291,106.97204 173.358291,107.206772 L173.358291,126.393798 C173.358291,126.899579 173.905859,127.215781 174.344053,126.96282 L189.167223,118.404497 C189.370545,118.287131 189.495764,118.070208 189.495764,117.835476 L189.495764,97.8697961 C189.495764,97.635064 189.370545,97.4181403 189.167223,97.3007743 L171.876563,87.3176542 C171.6731,87.200288 171.422663,87.200288 171.219341,87.3176542" id="Shape" fill="#FF4C00" fill-rule="nonzero"></path>
+                <g id="Group" transform="translate(20.859259, 153.600000)" fill="#F7F5EF" fill-rule="nonzero">
+                    <rect id="Rectangle-path" x="0" y="0" width="295.822222" height="66.3703704"></rect>
+                    <rect id="Rectangle-path" x="0" y="113.777778" width="295.822222" height="28.4444444"></rect>
+                    <rect id="Rectangle-path" x="0" y="75.8518519" width="295.822222" height="28.4444444"></rect>
+                    <rect id="Rectangle-path" x="0" y="151.703704" width="295.822222" height="28.4444444"></rect>
+                    <rect id="Rectangle-path" x="0" y="189.62963" width="295.822222" height="28.4444444"></rect>
+                    <rect id="Rectangle-path" x="0" y="227.555556" width="295.822222" height="28.4444444"></rect>
+                    <rect id="Rectangle-path" x="0" y="265.481481" width="295.822222" height="28.4444444"></rect>
+                    <rect id="Rectangle-path" x="0" y="303.407407" width="295.822222" height="28.4444444"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

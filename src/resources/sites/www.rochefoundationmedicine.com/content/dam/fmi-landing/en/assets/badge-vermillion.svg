@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="31px" viewBox="0 0 27 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / badge-vermillion</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.2455283,2.46897577 L2.13793103,8.88136795 L2.13793103,21.7071272 L13.2455283,28.1204945 L24.3521034,21.7071543 L24.3521034,8.88134086 L13.2455283,2.46897577 Z M26.4900345,7.64700397 L26.4900345,22.9413974 L13.2455752,30.5892296 L0,22.9414245 L0,7.64697688 L13.2455752,0.000334577442 L26.4900345,7.64700397 Z M13.2134828,6.4137931 L5.34482759,10.9568966 L5.34482759,20.0431034 L13.2134828,24.5862069 L21.0821379,20.0431034 L21.0821379,10.9568966 L13.2134828,6.4137931 Z" id="path-1"></path>
+    </defs>
+    <g id="▶︎--All-Pages-–-Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="RFM-Mobile-About_Us" transform="translate(-29.000000, -1228.000000)">
+            <g id="Group-9" transform="translate(0.000000, 817.000000)">
+                <g id="Group-7-Copy-2" transform="translate(27.000000, 411.000000)">
+                    <g id="Icons-/-badge-list-filled">
+                        <g id="badge">
+                            <rect id="Bounding-Box" x="0" y="0" width="31" height="31"></rect>
+                            <g id="↳-🎨-Color" transform="translate(2.119141, 0.000000)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="Combined-Shape" fill="#FF4C00" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                <g id="Colors-/-Vermilion" mask="url(#mask-2)" fill="#FF4C00">
+                                    <g transform="translate(-2.119141, 0.000000)" id="Rectangle">
+                                        <rect x="0" y="0" width="31" height="31"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="vermillion" transform="translate(2.119141, 0.000000)"></g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

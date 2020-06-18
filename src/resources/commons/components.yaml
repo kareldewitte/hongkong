@@ -1,0 +1,64 @@
+components:
+  - id: comp1
+    css_selector: .disclaimer 
+    template_file: none
+    call: remove
+    rpc: null
+  - id: comp2
+    css_selector: .text-media-title
+    template_file: commons/templates/test.jinja
+    call: replace_and_render
+    rpc: null 
+  - id: comp3
+    css_selector: section.bg-white:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)
+    template_file: commons/templates/ssr_rpc.jinja
+    call: replace_and_render
+    rpc: 
+      uri: "https://postman-echo.com/get?foo1={{webcontext.params.p[0]}}&foo2={{webcontext.params.b[0]}}"
+      method: GET
+      body: some contents
+      result_name: "rpcresult" 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

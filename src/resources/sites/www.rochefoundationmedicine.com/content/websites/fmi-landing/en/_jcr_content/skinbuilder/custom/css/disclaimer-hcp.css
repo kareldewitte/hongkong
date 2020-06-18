@@ -1,0 +1,193 @@
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+	imports
+	button and links
+	mixins
+*/
+/* imports
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* button and links
+============================================================================ */
+/* mixins
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* line 6, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer,
+#modal-public-site-disclaimer {
+  min-height: initial;
+  min-height: auto;
+  padding: 25px;
+}
+
+/* line 68, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_mixins.scss */
+#modal-hcp-disclaimer:not(.cq-Editable-dom),
+#modal-public-site-disclaimer:not(.cq-Editable-dom) {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  /* line 6, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+  #modal-hcp-disclaimer,
+  #modal-public-site-disclaimer {
+    width: 70%;
+    max-width: 1150px;
+    padding: 70px 120px;
+  }
+}
+
+/* line 23, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer .content-list-item > .columns,
+#modal-public-site-disclaimer .content-list-item > .columns {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+/* line 27, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer .content-list-item > .columns > .col,
+#modal-public-site-disclaimer .content-list-item > .columns > .col {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+/* line 34, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer .content-list-item > .columns .textAndMedia:first-child,
+#modal-public-site-disclaimer .content-list-item > .columns .textAndMedia:first-child {
+  width: 100%;
+}
+
+/* line 39, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer .content-list-item > .columns .text-media,
+#modal-public-site-disclaimer .content-list-item > .columns .text-media {
+  font-family: "GTSectra", Georgia, sans-serif;
+  color: #435363;
+}
+
+/* line 43, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer .content-list-item > .columns .text-media-title,
+#modal-public-site-disclaimer .content-list-item > .columns .text-media-title {
+  margin-bottom: 25px;
+  font-size: 30px;
+  line-height: 1.27;
+}
+
+@media (min-width: 900px) {
+  /* line 43, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+  #modal-hcp-disclaimer .content-list-item > .columns .text-media-title,
+  #modal-public-site-disclaimer .content-list-item > .columns .text-media-title {
+    font-size: 38px;
+  }
+}
+
+/* line 53, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer .content-list-item > .columns .text-media-description, #modal-hcp-disclaimer .content-list-item > .columns .text-media-article,
+#modal-public-site-disclaimer .content-list-item > .columns .text-media-description,
+#modal-public-site-disclaimer .content-list-item > .columns .text-media-article {
+  margin-bottom: 25px;
+  line-height: 1.63;
+}
+
+@media (min-width: 900px) {
+  /* line 53, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+  #modal-hcp-disclaimer .content-list-item > .columns .text-media-description, #modal-hcp-disclaimer .content-list-item > .columns .text-media-article,
+  #modal-public-site-disclaimer .content-list-item > .columns .text-media-description,
+  #modal-public-site-disclaimer .content-list-item > .columns .text-media-article {
+    font-size: 20px;
+  }
+}
+
+/* line 62, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer .content-list-item > .columns .text-media-description a, #modal-hcp-disclaimer .content-list-item > .columns .text-media-article a,
+#modal-public-site-disclaimer .content-list-item > .columns .text-media-description a,
+#modal-public-site-disclaimer .content-list-item > .columns .text-media-article a {
+  color: #ff4c00;
+}
+
+/* line 67, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer .content-list-item > .columns .text-media-button,
+#modal-public-site-disclaimer .content-list-item > .columns .text-media-button {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* line 77, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer .content-list-item > .columns .enterance-disclaimer__btn--cancel .text-media-button,
+#modal-public-site-disclaimer .content-list-item > .columns .enterance-disclaimer__btn--cancel .text-media-button {
+  background: #8B99A6;
+}
+
+/* line 85, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-hcp.scss */
+#modal-hcp-disclaimer .content-list-item > .columns .enterance-disclaimer__btn.btn-second .text-media-button,
+#modal-public-site-disclaimer .content-list-item > .columns .enterance-disclaimer__btn.btn-second .text-media-button {
+  background: #64ccc9;
+}
+

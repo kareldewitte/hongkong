@@ -1,0 +1,1 @@
+/home/karel/Projects/websites/www.magnolia-cms.com/

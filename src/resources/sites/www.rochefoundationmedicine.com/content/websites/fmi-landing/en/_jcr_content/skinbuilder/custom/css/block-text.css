@@ -1,0 +1,359 @@
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/*
+	imports
+	button and links
+	mixins
+*/
+/* imports
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* button and links
+============================================================================ */
+/* line 18, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.block-text .text-media-button {
+  padding: 0 50px;
+  height: 50px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  outline: 0;
+  border: 0;
+  background-color: #ff4c00;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1.83;
+  letter-spacing: .8px;
+  font-family: "Gotham", Arial, sans;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* line 37, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.block-text .text-media-button:link, .block-text .text-media-button:visited {
+  color: white;
+}
+
+/* line 42, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.block-text .text-media-button:hover {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 55, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.block-text--how .text-media-button {
+  text-decoration: none;
+  font-family: "Gotham", Arial, sans;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: .8px;
+  color: #ff4c00;
+  text-transform: uppercase;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+/* line 67, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.block-text--how .text-media-button:link, .block-text--how .text-media-button:visited {
+  color: #ff4c00;
+}
+
+/* line 72, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.block-text--how .text-media-button:hover {
+  text-decoration: none;
+  color: #435363;
+}
+
+/* line 77, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.block-text--how .text-media-button::after {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 7px;
+  margin-left: 10px;
+  background-image: url("/content/dam/fmi-landing/en/assets/arrow-right-orange.svg");
+}
+
+@media (min-width: 900px) {
+  /* line 55, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+  .block-text--how .text-media-button {
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: .9px;
+    font-weight: 500;
+  }
+}
+
+/* mixins
+============================================================================ */
+/* line 6, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text {
+  text-align: center;
+  padding: 25px;
+  margin: auto auto 75px;
+  max-width: 920px;
+}
+
+/* line 12, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text .text-media-title {
+  margin-bottom: 10px;
+  margin-top: 0;
+  line-height: 1.2;
+  font-size: 30px;
+}
+
+@media (min-width: 900px) {
+  /* line 12, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+  .block-text .text-media-title {
+    font-size: 54px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+}
+
+/* line 24, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text .text-media-subtitle {
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-size: 27px;
+  color: #ff4c00;
+}
+
+@media (min-width: 900px) {
+  /* line 24, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+  .block-text .text-media-subtitle {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+}
+
+/* line 35, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text .text-media-article {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* line 41, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text .text-media-article p:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 900px) {
+  /* line 35, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+  .block-text .text-media-article {
+    font-size: 20px;
+  }
+}
+
+/* line 50, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text .text-media-article ul {
+  margin: 1em 0;
+  text-align: left;
+}
+
+/* line 53, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text .text-media-article ul li {
+  padding-left: 1em;
+}
+
+/* line 55, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text .text-media-article ul li::before {
+  content: '';
+  float: left;
+  width: .5em;
+  height: .5em;
+  border-radius: 50%;
+  background: #ff4c00;
+  margin-top: .55em;
+  margin-left: -1em;
+}
+
+/* line 69, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text .text-media-description {
+  font-size: 22px;
+  line-height: 1.27;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 900px) {
+  /* line 69, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+  .block-text .text-media-description {
+    font-size: 28px;
+    line-height: 1.29;
+    margin-bottom: 50px;
+  }
+}
+
+/* line 85, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text .text-media .cq-dd-video {
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+/* line 92, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--picture {
+  margin-top: -100px;
+}
+
+/* line 96, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--explore {
+  margin-bottom: 0;
+}
+
+@media (max-width: 599px) {
+  /* line 96, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+  .block-text--explore {
+    padding-bottom: 0;
+  }
+}
+
+/* line 104, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--how {
+  margin-bottom: 0;
+}
+
+/* line 107, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--how .text-media-button {
+  background: transparent;
+  height: auto;
+  padding: initial;
+}
+
+/* line 115, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.order-steps + .block-text--how {
+  margin-top: 0;
+}
+
+/* line 120, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--error {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* line 124, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--error .text-media {
+  color: #405167;
+}
+
+/* line 129, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--footnote {
+  text-align: initial;
+  color: #7a8a98;
+}
+
+/* line 133, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--footnote .text-media-description {
+  font-size: 14px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+@media (min-width: 900px) {
+  /* line 133, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+  .block-text--footnote .text-media-description {
+    font-size: 16px;
+  }
+}
+
+/* line 144, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--footnote-2 {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 150, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--references .text-media {
+  text-align: left;
+}
+
+/* line 153, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-text.scss */
+.block-text--references .text-media a {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+

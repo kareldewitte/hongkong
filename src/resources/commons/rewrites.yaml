@@ -1,0 +1,8 @@
+rules:
+  - id: r1
+    expr: s/https:\/\/www.rochefoundationmedicine.com\//\//ig
+
+
+
+
+

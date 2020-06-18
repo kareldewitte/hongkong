@@ -1,0 +1,29 @@
+[package]
+name = "ul-cms"
+version = "0.1.0"
+authors = ["Karel De Witte <2000outoftime@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "2.0"
+actix-rt = "1.1.1"
+actix-http = "1.0.1"
+actix-service = "1.0.5"
+rug = "1.8.0"
+tera = "*"
+serde_yaml = "0.8.12"
+serde = "1.0.110"
+futures = "0.3.5"
+log = "0.4.8"
+actix-files = "0.2.1"
+mime_guess = "2.0.3"
+env_logger = "0.7.1"
+sedregex = "0.2.4"
+notify = "4.0.12"
+kuchiki = "0.8.0"
+walkdir = "2.3.1"
+sha2 = "0.8.2"
+generic-array = "*"
+reqwest = { version = "0.10.6", features = ["blocking"] }

@@ -1,0 +1,435 @@
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+	imports
+	button and links
+	mixins
+*/
+/* imports
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* button and links
+============================================================================ */
+/* mixins
+============================================================================ */
+/* line 5, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 100%;
+  font-family: "Gotham", Arial, sans;
+  padding: 25px;
+}
+
+@media (min-width: 600px) {
+  /* line 13, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs > .columns {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  /* line 5, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs {
+    padding: 0 60px;
+    background: white;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
+    margin-top: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 5, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs {
+    margin-bottom: 120px;
+  }
+}
+
+/* line 31, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__nav {
+  display: none;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  /* line 31, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs__nav {
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+/* line 40, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__menu {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid #ff4c00;
+  padding: 30px 0;
+}
+
+/* line 47, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__menu__item {
+  line-height: 1;
+  cursor: pointer;
+  font-size: 18px;
+  color: #7a8a98;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  padding: 0 10px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  text-align: center;
+}
+
+/* line 59, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__menu__item:nth-child(1) {
+  width: 30%;
+}
+
+/* line 63, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__menu__item.fmi-tabs--active {
+  color: #ff4c00;
+}
+
+/* line 69, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__holder {
+  border-top: 2px solid #d5d5d5;
+}
+
+@media (min-width: 900px) {
+  /* line 69, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs__holder {
+    border: 0;
+  }
+}
+
+/* line 77, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item {
+  padding: 0;
+  border-bottom: 2px solid #d5d5d5;
+  overflow: hidden;
+  height: auto;
+  transition: all .5s;
+}
+
+@media (min-width: 900px) {
+  /* line 77, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs__item {
+    border: 0;
+  }
+  /* line 68, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_mixins.scss */
+  .fmi-tabs__item:not(.cq-Editable-dom) {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  /* line 94, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs__item .text-media > div:not(.cq-Editable-dom):first-child {
+    display: none;
+    max-height: 0;
+  }
+}
+
+/* line 100, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item .text-media > div:not(.cq-Editable-dom):not(:first-child) {
+  max-height: 0;
+  transition: all .5s;
+}
+
+/* line 107, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item .text-media-title {
+  color: #7a8a98;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  min-height: 45px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+/* line 117, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item .text-media-title::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-right: 3px;
+  margin-top: -3px;
+  border: solid #7a8a98;
+  border-width: 0 0 1px 1px;
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+  transition: all .3s;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: 10px;
+}
+
+/* line 132, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item .text-media-title p {
+  line-height: 1;
+}
+
+/* line 137, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item .text-media-description {
+  padding-bottom: 5px;
+}
+
+/* line 141, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item .text-media ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 900px) {
+  /* line 141, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs__item .text-media ul {
+    padding-bottom: 0;
+  }
+}
+
+/* line 152, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item .text-media ul li {
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+@media (min-width: 600px) {
+  /* line 152, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs__item .text-media ul li {
+    width: 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  /* line 152, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs__item .text-media ul li {
+    width: 33.33%;
+    font-size: 16px;
+    letter-spacing: -.2px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 152, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+  .fmi-tabs__item .text-media ul li {
+    width: 20%;
+    padding: 5px 0;
+  }
+}
+
+/* line 172, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item .text-media ul a {
+  padding: 6px 0;
+  display: inline-block;
+  text-decoration: none;
+  color: #425264;
+  transition: all .5s;
+  margin: 5px 0;
+}
+
+/* line 180, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item .text-media ul a:hover {
+  color: #ff4c00;
+  box-shadow: 0 -3px 0 #d5d5d5 inset;
+}
+
+/* line 188, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item.fmi-tabs--active {
+  max-height: 3000px;
+  opacity: 1;
+}
+
+/* line 194, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item.fmi-tabs--active .text-media > div:not(:first-child) {
+  max-height: 3000px;
+}
+
+/* line 198, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item.fmi-tabs--active .text-media-title {
+  color: #ff4c00;
+}
+
+/* line 200, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs__item.fmi-tabs--active .text-media-title::after {
+  -ms-transform: rotate(135deg);
+      transform: rotate(135deg);
+  margin-top: 7px;
+}
+
+/* line 74, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_mixins.scss */
+.fmi-tabs.cq-Editable-dom {
+  border: 3px dashed #eee;
+  padding: 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/* line 218, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs.cq-Editable-dom .fmi-tabs__menu__item {
+  border: 2px dashed #ccc;
+  padding: 10px;
+}
+
+/* line 224, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs.cq-Editable-dom .fmi-tabs__nav {
+  border: 5px dashed #ddd;
+  position: relative;
+}
+
+/* line 228, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs.cq-Editable-dom .fmi-tabs__nav::after {
+  content: 'Tabs navigation (auto generated by JS using Tabs Titles)';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 10px;
+  background: #ddd;
+  color: #333;
+  font: 12px/1em Arial, sans;
+}
+
+/* line 240, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs.cq-Editable-dom .fmi-tabs__item {
+  position: relative;
+  border: 2px dashed gray;
+  margin: 10px 0 20px;
+  padding: 10px;
+}
+
+/* line 246, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs.cq-Editable-dom .fmi-tabs__item::after {
+  content: 'Tab/Accordion Item';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  padding: 10px;
+  background: gray;
+  color: white;
+  font: 12px/1em Arial, sans;
+}
+
+/* line 258, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs.cq-Editable-dom .fmi-tabs__item .text-media-title {
+  border: 1px dashed gray;
+  position: relative;
+}
+
+/* line 262, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs.cq-Editable-dom .fmi-tabs__item .text-media-title::before {
+  content: 'Tab/Accordion Title';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  padding: 10px;
+  background: gray;
+  color: white;
+  font: 12px/1em Arial, sans;
+}
+
+/* line 273, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs.cq-Editable-dom .fmi-tabs__item .text-media-description {
+  border: 1px dashed gray;
+  position: relative;
+}
+
+/* line 277, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs-custom.scss */
+.fmi-tabs.cq-Editable-dom .fmi-tabs__item .text-media-description::after {
+  content: 'Tab/Accordion Content';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  padding: 10px;
+  background: gray;
+  color: white;
+  font: 12px/1em Arial, sans;
+}
+

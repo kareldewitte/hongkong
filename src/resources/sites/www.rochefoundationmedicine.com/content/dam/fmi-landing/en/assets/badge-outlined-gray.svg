@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="31px" viewBox="0 0 27 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons / badge-outlined-gray</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.4226526,1.19323808 L1.03330659,8.34811021 L1.03330659,22.6518898 L13.4226526,29.8067619 L25.8119986,22.6518898 L25.8119986,8.34811021 L13.4226526,1.19323808 Z M26.8453052,7.75160875 L26.8453052,23.2483912 L13.4226526,31 L0,23.2483912 L0,7.75160875 L13.4226526,0 L26.8453052,7.75160875 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="List-/-Item-/-Badge-left" transform="translate(-4.000000, -1.000000)">
+            <g id="List-/-Item-/-Badge-top" transform="translate(2.000000, -2.000000)">
+                <g id="List-/-Item">
+                    <g id="Number" transform="translate(0.000000, 3.000000)">
+                        <g id="Icons-/-badge-outlined">
+                            <g id="badge">
+                                <rect id="Bounding-Box" x="0" y="0" width="31" height="31"></rect>
+                                <g id="↳-🎨-Color" transform="translate(2.058594, 0.000000)">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <use id="Mask" fill="#E1E1E1" fill-rule="nonzero" xlink:href="#path-1"></use>
+                                    <g id="Colors-/-Alto" mask="url(#mask-2)" fill="#D5D5D5">
+                                        <g transform="translate(-2.058594, 0.000000)" id="Rectangle">
+                                            <rect x="0" y="0" width="31" height="31"></rect>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,180 @@
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/*
+	imports
+	button and links
+	mixins
+*/
+/* imports
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* button and links
+============================================================================ */
+/* mixins
+============================================================================ */
+/* line 6, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+.tabHolder {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 900px) {
+  /* line 6, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+  .tabHolder {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+/* line 17, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+.tab-nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  padding: 25px 25px 0;
+  border-bottom: 1px solid #d5d5d5;
+  font-family: "Gotham", Arial, sans;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.17;
+  overflow-x: auto;
+}
+
+/* line 27, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+.tab-nav .indicator {
+  display: none;
+}
+
+@media screen and (min-width: 1450px) {
+  /* line 17, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+  .tab-nav {
+    padding-left: calc( (100% - 1400px)/2 + 25px);
+    padding-right: calc( (100% - 1400px)/2 + 25px);
+    width: 100%;
+  }
+}
+
+/* line 37, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+.tab-nav .tab {
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+}
+
+/* line 39, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+.tab-nav .tab:not(:last-child) {
+  margin-right: 25px;
+}
+
+@media (min-width: 900px) {
+  /* line 39, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+  .tab-nav .tab:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+/* line 47, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+.tab-nav .tab-menu-link {
+  color: #ff4c00;
+  text-decoration: none;
+  padding: 15px 0 10px;
+  display: block;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* line 55, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+.tab-nav .tab-menu-link.active {
+  color: #ff4c00;
+  box-shadow: 0 -3px 0 #d5d5d5 inset;
+}
+
+/* line 60, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+.tab-nav .tab-menu-link:hover {
+  text-decoration: none;
+}
+
+@media (min-width: 900px) {
+  /* line 47, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+  .tab-nav .tab-menu-link {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.1px;
+  }
+}
+
+/* line 75, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+.tabs-items .block-text {
+  margin-top: 25px;
+}
+
+@media (min-width: 900px) {
+  /* line 75, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/module-tabs.scss */
+  .tabs-items .block-text {
+    margin-top: 50px;
+  }
+}
+

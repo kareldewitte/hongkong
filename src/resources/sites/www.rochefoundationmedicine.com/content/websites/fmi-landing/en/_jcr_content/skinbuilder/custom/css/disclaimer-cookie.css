@@ -1,0 +1,191 @@
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/*
+	imports
+	button and links
+	mixins
+*/
+/* imports
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* button and links
+============================================================================ */
+/* line 18, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.disclaimer-wrapper button {
+  padding: 0 50px;
+  height: 50px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  outline: 0;
+  border: 0;
+  background-color: #ff4c00;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1.83;
+  letter-spacing: .8px;
+  font-family: "Gotham", Arial, sans;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* line 37, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.disclaimer-wrapper button:link, .disclaimer-wrapper button:visited {
+  color: white;
+}
+
+/* line 42, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.disclaimer-wrapper button:hover {
+  text-decoration: none;
+  color: white;
+}
+
+/* mixins
+============================================================================ */
+/* line 6, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-cookie.scss */
+.disclaimer-wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+
+/* line 13, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-cookie.scss */
+.disclaimer-wrapper .content {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  font-size: 14px;
+  font-family: "GTSectra", Georgia, sans-serif;
+  color: #435363;
+}
+
+@media (max-width: 599px) {
+  /* line 13, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-cookie.scss */
+  .disclaimer-wrapper .content {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* line 28, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-cookie.scss */
+.disclaimer-wrapper .content .section {
+  margin-bottom: 25px;
+}
+
+@media (min-width: 600px) {
+  /* line 28, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-cookie.scss */
+  .disclaimer-wrapper .content .section {
+    margin-right: 25px;
+    margin-bottom: 0;
+  }
+}
+
+/* line 38, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-cookie.scss */
+.disclaimer-wrapper a {
+  color: #ff4c00;
+}
+
+/* line 42, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-cookie.scss */
+.disclaimer-wrapper button {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+/* line 48, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-cookie.scss */
+.disclaimer-wrapper + .site .page__footer {
+  padding-bottom: 200px;
+}
+
+@media (min-width: 600px) {
+  /* line 48, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-cookie.scss */
+  .disclaimer-wrapper + .site .page__footer {
+    padding-bottom: 150px;
+  }
+}
+
+@media (min-width: 900px) {
+  /* line 48, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-cookie.scss */
+  .disclaimer-wrapper + .site .page__footer {
+    padding-bottom: 100px;
+  }
+}
+

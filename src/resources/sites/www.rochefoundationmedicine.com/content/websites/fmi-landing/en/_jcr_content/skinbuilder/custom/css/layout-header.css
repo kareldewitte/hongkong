@@ -1,0 +1,223 @@
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+	imports
+	button and links
+	mixins
+*/
+/* imports
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* button and links
+============================================================================ */
+/* mixins
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* line 7, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.page__header {
+  border-bottom: 1px solid #d5d5d5;
+  height: 90px;
+}
+
+@media (min-width: 900px) {
+  /* line 7, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+  .page__header {
+    padding: 25px 0;
+    height: auto;
+  }
+}
+
+/* line 16, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.page__header > .columns {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 25px;
+}
+
+/* line 22, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.page__header > .columns > .col {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 60px;
+  width: 100%;
+}
+
+/* line 29, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.page__header > .columns > .col .page__logo img {
+  height: 30px;
+}
+
+@media (min-width: 900px) {
+  /* line 29, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+  .page__header > .columns > .col .page__logo img {
+    height: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  /* line 22, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+  .page__header > .columns > .col {
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+  }
+}
+
+/* line 41, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.page__header > .columns > .col:last-child {
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  /* line 48, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+  .page__logo {
+    margin-top: -40px;
+  }
+}
+
+/* line 58, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.website-current {
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  /* line 58, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+  .website-current {
+    margin-bottom: 10px;
+  }
+}
+
+/* line 65, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.website-current .text-media {
+  height: 30px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-left: -25px;
+  margin-right: -25px;
+}
+
+@media (min-width: 900px) {
+  /* line 65, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+  .website-current .text-media {
+    height: 20px;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    margin: 0;
+  }
+}
+
+/* line 81, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.website-current .text-media-title, .website-current .text-media-button {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: normal;
+  padding-top: 2px;
+}
+
+/* line 91, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.website-current .text-media-title {
+  padding-right: 12.5px;
+  margin-right: 12.5px;
+  color: #435363;
+  border-right: 1px solid #7a8a98;
+  height: 24px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-left: 30px;
+  background-image: url("/content/dam/fmi-landing/en/assets/../icons/nav-ico-hcp.png");
+  background-repeat: no-repeat;
+}
+
+/* line 104, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.website-current .text-media-button {
+  text-decoration: none;
+  color: #7a8a98;
+}
+
+/* line 108, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.website-current .text-media-button:hover {
+  color: #435363;
+}
+
+/* line 117, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/layout-header.scss */
+.website-current--public .text-media-title {
+  background-image: url("/content/dam/fmi-landing/en/assets/../icons/nav-ico-public.png");
+  background-repeat: no-repeat;
+}
+
