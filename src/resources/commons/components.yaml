@@ -14,8 +14,12 @@ components:
     template_file: commons/templates/ssr_rpc.jinja
     call: replace_and_render
     rpc: 
-      uri: "https://postman-echo.com/get?foo1={{webcontext.params.p[0]}}&foo2={{webcontext.params.b[0]}}"
+      #uri: "https://postman-echo.com/get?foo1={{webcontext.params.p[0]}}&foo2={{webcontext.params.b[0]}}"
+      #uri: "https://www.google.com/"
+      uri: "http://api.icndb.com/jokes/random"
+      #uri: "http://localhost:8000/"
       method: GET
+      ttl: 1
       body: some contents
       result_name: "rpcresult" 
 
@@ -61,4 +65,119 @@ components:
 
 
 
-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

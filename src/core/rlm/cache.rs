@@ -38,6 +38,7 @@ pub struct Cache{
 
 pub trait CacheFunctions<S>{
     fn getUpdate(&mut self,source:S) -> Result<Page,&str>;    
+    fn size(&mut self)->usize;
 }
 
 impl Default for Cache{
@@ -49,7 +50,9 @@ impl Default for Cache{
 }
 
 impl CacheFunctions<String> for Cache{
-
+    fn size(&mut self)->usize{
+        self.pages.len()
+    }
 
     fn getUpdate(&mut self,source:String) -> Result<Page,&str>{
 

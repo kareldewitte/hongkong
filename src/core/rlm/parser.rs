@@ -14,14 +14,20 @@ use std::io::prelude::*;
 use kuchiki::traits::*;
 use std::sync::{Arc, Mutex};
 
-
-#[derive(Debug, PartialEq, Serialize, Deserialize,Clone)]
+#[derive(Hash)]
+#[derive(Debug,Eq, PartialEq, Serialize, Deserialize,Clone)]
 pub enum Method {
     GET,
     POST
-
 }
 
+impl std::fmt::Display for Method {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        //write!(f, "{:?}", self)
+        // or, alternatively:
+        std::fmt::Debug::fmt(self, f)
+    }
+}
 
 
 #[derive(Debug, PartialEq, Serialize, Deserialize,Clone)]
@@ -33,12 +39,14 @@ pub struct Component {
   pub rpc: Option<RPC>
 }
 
-#[derive(Debug, PartialEq, Serialize, Deserialize,Clone)]
+#[derive(Hash)]
+#[derive(Debug, Eq, PartialEq, Serialize, Deserialize,Clone)]
 pub struct RPC{
     pub uri:String,
     pub method: Method,
     pub body:Option<String>,
-    pub result_name:String
+    pub result_name:String,
+    pub ttl:u16
 }
 
 
