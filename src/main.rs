@@ -34,7 +34,7 @@ static sitesRoot: &str = "/home/karel/Projects/rustpjcts/test/proxy_01/src/resou
 
 use crate::core::middle::transformer::{build_context, Calls, WebContext};
 use crate::core::rlm::cache::{Cache, CacheFunctions, Page};
-use crate::core::rlm::parser::{Component, Registry};
+use crate::core::rlm::parser::{Component, Registry,ServerConfig};
 use crate::core::rlm::rloader::exposer;
 use crate::core::rlm::rpc_actors::rpc_actors::{RpcExecutor, SendRequest};
 use actix::prelude::*;
@@ -51,6 +51,7 @@ struct AppState {
     pagecache: Arc<Mutex<Cache>>,
     rpcexec: Addr<RpcExecutor>,
     //httpclient: Client
+    servconf: Arc<Mutex<ServerConfig>>,
     httpclient: Arc<Mutex<Client>>,
 }
 
@@ -114,8 +115,9 @@ async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
         None => "default",
     };
 
+    let servconf = (*data.servconf.deref()).lock().unwrap();
     let postfix = host.to_owned() + "/" + req.match_info().get("path").unwrap_or("index.html");
-    let path = format!("{}{}", sitesRoot, postfix);
+    let path = format!("{}{}", servconf.sites_root, postfix);
     //println!("requested {:?}",&path);
     //info!{"path {}",path};
     let pathbuf: std::path::PathBuf = PathBuf::from(path.clone());
@@ -126,6 +128,7 @@ async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
     //error!{"path {} mime {}",path,mime};
     let reg = (*data.registry.deref()).lock().unwrap();
     let rpcexec = &data.rpcexec;
+    
     let client = (*data.httpclient.deref()).lock().unwrap();
     //let client = &data.httpclient;
     //println!("data {:?}",reg.compMap.len());
@@ -216,20 +219,6 @@ async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
     }
 }
 
-async fn fact(req: HttpRequest) -> impl Responder {
-    let n = req.match_info().get("n").unwrap_or("5");
-    let ni: i32 = n.parse().unwrap();
-    let mut a: i32 = ni;
-    let mut r = Integer::from(1);
-    let now = Instant::now();
-
-    while a > 1 {
-        r = r * a;
-        a = a - 1;
-    }
-    format!("{}!=>{} in {}ms", &n, &r, now.elapsed().as_micros())
-}
-
 async fn serve(req: HttpRequest) -> Result<afs::NamedFile, Error> {
     let path: std::path::PathBuf = PathBuf::from(
         sitesRoot.to_owned() + "/" + req.match_info().get("path").unwrap_or("index.html"),
@@ -247,10 +236,26 @@ async fn serve(req: HttpRequest) -> Result<afs::NamedFile, Error> {
 fn main() {
     //-> std::io::Result<()> {
     env_logger::init();
-    let resources = "/home/karel/Projects/rustpjcts/test/proxy_01/src/resources";
+    let mut server_config = ServerConfig::default();
+    let args: Vec<String> = env::args().collect();
+    if(args.len()>1){
+        //println!("{:?}",args[1]);
+        let mut file = fs::File::open(&(args[1].clone()+"/config.yaml")).expect("Unable to open file");
+        server_config = serde_yaml::from_reader::<_,ServerConfig>(file).unwrap();
+        //println!("{:?}",server_config);
+
+    }else{
+        println!("Please specify server config directory !");
+        return
+    }
+    
+    
+
+
+  
     //pages/main.yaml
 
-    let regmutex: Arc<Mutex<Registry>> = match exposer::init(resources.to_string()) {
+    let regmutex: Arc<Mutex<Registry>> = match exposer::init(server_config.project_root.clone()) {
         Ok(rtmx) => {
             Arc::clone(&rtmx)
             //Arc::new(Mutex::new(Registry::default()))
@@ -267,6 +272,9 @@ fn main() {
     let addr = SyncArbiter::start(1, || RpcExecutor {
         component_cache: ttl_cache::TtlCache::new(1000)
     });
+
+    let srv_conf = Arc::new(Mutex::new(server_config.clone()));
+
     let cache = Arc::new(Mutex::new(Cache::default()));
     //let deref = unsafe { ptr.as_ref() };
     let client = Arc::new(Mutex::new(Client::new()));
@@ -276,25 +284,25 @@ fn main() {
         pagecache: cache,
         rpcexec: addr.clone(),
         httpclient: client,
+        servconf:srv_conf
     });
 
     println!("Initialising server");
     std::thread::sleep(Duration::from_millis(500));
-    touchFiles(&(resources.to_string() + &"/commons".to_string()));
-    touchFiles(&(resources.to_string() + &"/content".to_string()));
+    touchFiles(&(server_config.project_root.clone() + &"/commons".to_string()));
+    touchFiles(&(server_config.project_root.clone() + &"/content".to_string()));
 
     HttpServer::new(move || {
         App::new()
             .app_data(state.clone())
             .route("/", web::get().to(greet))
             .route("/{path:.*}", web::get().to(render))
-            .route("/fact/{n}", web::get().to(fact))
     })
-    .workers(2000)
-    .bind("127.0.0.1:8000")
+    .workers(server_config.workers.into())
+    .bind(server_config.clone().bind.clone())
     .unwrap()
     .run();
     //.unwrap();
-    println!("Started http server: 127.0.0.1:8000");
+    println!("Started http server at {:?}:",server_config.bind.clone());
     let _ = sys.run();
 }

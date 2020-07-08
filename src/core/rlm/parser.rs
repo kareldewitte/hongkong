@@ -49,7 +49,13 @@ pub struct RPC{
     pub ttl:u16
 }
 
-
+#[derive(Debug, Eq, PartialEq, Serialize, Deserialize,Clone,Default)]
+pub struct ServerConfig{
+    pub project_root: String, 
+    pub sites_root:  String,
+    pub workers: u16,
+    pub bind: String
+}
 
 
 #[derive(Debug, PartialEq, Serialize, Deserialize,Clone)]
@@ -74,6 +80,7 @@ pub struct Content{
 pub trait ToRegistryFrom<S,R>{
     fn fromTo(source:S,to:R);
 }
+
 
 #[derive(Debug, PartialEq, Serialize, Deserialize,Clone)]
 pub struct Rules{

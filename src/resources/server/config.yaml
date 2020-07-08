@@ -1,1 +1,4 @@
-siteRoot: resources/sites
+project_root: /home/karel/Projects/rustpjcts/test/proxy_01/src/resources/ 
+sites_root: /home/karel/Projects/rustpjcts/test/proxy_01/src/resources/sites/ 
+workers: 2000
+bind: localhost:8000
