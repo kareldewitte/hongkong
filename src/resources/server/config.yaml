@@ -3,3 +3,4 @@ sites_root: /app/src/resources/sites/
 workers: 200
 bind: 0.0.0.0
 port: PORT
+default_site: www.rochefoundationmedecine.com

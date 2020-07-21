@@ -57,7 +57,8 @@ pub struct ServerConfig{
     pub sites_root:  String,
     pub workers: u16,
     pub bind: String,
-    pub port: String
+    pub port: String,
+    pub default_site: String
 }
 
 

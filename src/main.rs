@@ -109,12 +109,15 @@ async fn greet(req: HttpRequest) -> impl Responder {
 
 
 async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
+    
+    let servconf = (*data.servconf.deref()).lock().unwrap();
+    
     let host: &str = match req.headers().get("x-site") {
         Some(host) => host.to_str().unwrap(),
-        None => "default",
+        None => &servconf.default_site,
     };
 
-    let servconf = (*data.servconf.deref()).lock().unwrap();
+    
     let postfix = host.to_owned() + "/" + req.match_info().get("path").unwrap_or("index.html");
     let path = format!("{}{}", servconf.sites_root, postfix);
     //println!("requested {:?}",&path);
