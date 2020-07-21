@@ -17,6 +17,7 @@ pub mod exposer {
         let (tx, rx) = channel();
         let mut registry = Registry::default();
         registry.init_path = file_name.clone();
+        println!("Init path :{:?}",registry.init_path);
         let regmutex: Arc<Mutex<Registry>> = Arc::new(Mutex::new(registry));
         let regmutex_c = Arc::clone(&regmutex);  
         let fname = file_name.clone();

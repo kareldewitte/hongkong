@@ -13,6 +13,7 @@ use std::io;
 use std::io::prelude::*;
 use kuchiki::traits::*;
 use std::sync::{Arc, Mutex};
+use std::env;
 
 #[derive(Hash)]
 #[derive(Debug,Eq, PartialEq, Serialize, Deserialize,Clone)]
@@ -55,7 +56,8 @@ pub struct ServerConfig{
     pub project_root: String, 
     pub sites_root:  String,
     pub workers: u16,
-    pub bind: String
+    pub bind: String,
+    pub port: String
 }
 
 
@@ -222,6 +224,7 @@ impl Loader for Registry{
                     //fix code here
                     match path.strip_prefix(this.init_path.clone()){
                         Ok(key)=>{
+                            println!("inserting template {:?}",key);
                             this.templates.insert(String::from(key.to_string_lossy()), contentu8);   
                         },
                         Err(e)=>{

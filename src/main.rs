@@ -291,6 +291,14 @@ fn main() {
     touchFiles(&(server_config.project_root.clone() + &"/commons".to_string()));
     touchFiles(&(server_config.project_root.clone() + &"/content".to_string()));
 
+    let mut bind = server_config.clone().bind.clone();
+    let mut port = server_config.clone().port.clone();
+    match env::var(server_config.clone().port.clone()) {
+        Ok(val) => bind = bind + ":" + &val,
+        Err(e) => bind = bind + ":" + &port
+    }
+    println!("binding to {:?}", bind);
+
     HttpServer::new(move || {
         App::new()
             .app_data(state.clone())
@@ -298,7 +306,7 @@ fn main() {
             .route("/{path:.*}", web::get().to(render))
     })
     .workers(server_config.workers.into())
-    .bind(server_config.clone().bind.clone())
+    .bind(bind)
     .unwrap()
     .run();
     //.unwrap();
