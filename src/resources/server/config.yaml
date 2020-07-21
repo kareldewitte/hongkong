@@ -1,5 +1,5 @@
 project_root: /app/src/resources/ 
 sites_root: /app/src/resources/sites/ 
 workers: 200
-bind: localhost
+bind: 0.0.0.0
 port: PORT
