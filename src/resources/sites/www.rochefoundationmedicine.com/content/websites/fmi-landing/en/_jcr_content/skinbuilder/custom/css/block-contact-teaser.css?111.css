@@ -1,0 +1,169 @@
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+	imports
+	button and links
+	mixins
+*/
+/* imports
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* button and links
+============================================================================ */
+/* line 18, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.contact-teaser .text-media-button {
+  padding: 0 50px;
+  height: 50px;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  outline: 0;
+  border: 0;
+  background-color: #ff4c00;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1.83;
+  letter-spacing: .8px;
+  font-family: "Gotham", Arial, sans;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* line 37, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.contact-teaser .text-media-button:link, .contact-teaser .text-media-button:visited {
+  color: white;
+}
+
+/* line 42, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
+.contact-teaser .text-media-button:hover {
+  text-decoration: none;
+  color: white;
+}
+
+/* mixins
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* line 6, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-contact-teaser.scss */
+.contact-teaser {
+  padding: 50px;
+  margin: 0 auto;
+  max-width: 920px;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  /* line 6, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-contact-teaser.scss */
+  .contact-teaser {
+    padding: 50px 0;
+    margin-bottom: 50px;
+    margin-top: 25px;
+  }
+}
+
+/* line 19, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-contact-teaser.scss */
+.contact-teaser .text-media-title {
+  color: #ff4c00;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 900px) {
+  /* line 19, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-contact-teaser.scss */
+  .contact-teaser .text-media-title {
+    font-size: 54px;
+    line-height: 1;
+    margin-bottom: 25px;
+  }
+}
+
+/* line 30, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-contact-teaser.scss */
+.contact-teaser .text-media-description {
+  font-size: 16px;
+  line-height: 1.63;
+  color: #7a8a98;
+}
+
+/* line 34, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-contact-teaser.scss */
+.contact-teaser .text-media-description a {
+  color: #ff4c00;
+}
+
+@media (min-width: 900px) {
+  /* line 30, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-contact-teaser.scss */
+  .contact-teaser .text-media-description {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+/* line 45, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-contact-teaser.scss */
+.contact-teaser .text-media-button-wrapper {
+  margin-top: 25px;
+}

@@ -1,0 +1,194 @@
+@charset "UTF-8";
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/* Slider */
+/* line 46, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-list {
+  box-sizing: content-box;
+  background: white;
+}
+
+/* line 57, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-slide > div {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* Arrows */
+/* line 66, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 30px;
+  width: 30px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+  z-index: 10;
+}
+
+/* line 85, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-prev:hover, .slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  outline: none;
+  background: transparent;
+  color: transparent;
+}
+
+/* line 89, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-prev:hover:before, .slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 0.75;
+}
+
+/* line 93, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+
+/* line 96, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-prev:before,
+.slick-next:before {
+  line-height: 1;
+  opacity: 1;
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: solid #ff4c00;
+  border-width: 0 0 2px 2px;
+  top: 4px;
+  left: 5px;
+}
+
+/* line 110, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-prev {
+  left: 0;
+}
+
+/* line 112, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+[dir="rtl"] .slick-prev {
+  left: auto;
+  right: 0;
+}
+
+/* line 116, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-prev:before {
+  content: "←";
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+}
+
+/* line 119, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+[dir="rtl"] .slick-prev:before {
+  content: "→";
+  -ms-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+}
+
+/* line 126, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-next {
+  right: 0;
+}
+
+/* line 128, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+[dir="rtl"] .slick-next {
+  left: 0;
+  right: auto;
+}
+
+/* line 132, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-next:before {
+  content: "→";
+  -ms-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+}
+
+/* line 135, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+[dir="rtl"] .slick-next:before {
+  content: "←";
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+}
+
+/* Dots */
+/* line 144, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
+
+/* line 148, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* line 158, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin: 0 8px;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* line 166, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-dots li button {
+  border: 2px solid #ff4c00;
+  border-radius: 50%;
+  background: white;
+  display: block;
+  height: 16px;
+  width: 16px;
+  outline: none;
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+/* line 180, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-dots li button:hover, .slick-dots li button:focus {
+  outline: none;
+  background: #ff4c00;
+  opacity: .5;
+}
+
+/* line 186, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/plugin-slick.scss */
+.slick-dots li.slick-active button {
+  background: #ff4c00;
+  opacity: 1;
+}

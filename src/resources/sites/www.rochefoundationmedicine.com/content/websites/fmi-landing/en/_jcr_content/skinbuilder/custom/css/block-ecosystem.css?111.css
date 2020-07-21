@@ -1,0 +1,491 @@
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/*
+	imports
+	button and links
+	mixins
+*/
+/* imports
+============================================================================ */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Spacing
+    2. Widths and heights
+    3. Colors
+    4. Fonts
+    5. Icons
+*/
+/* 1. SPACING */
+/* 2. WIDTHS AND HEIGHTS */
+/* 3. COLORS */
+/* 4. FONTS */
+/* 5. ICONS */
+/*
+    1. Breakpoints
+    2. Icons
+    3. Mobile/Desktop Behaviour
+*/
+/* BREAKPOINTS */
+/* ICONS */
+/* Hide/Show elements on mobile/desktop */
+/* Others */
+/* button and links
+============================================================================ */
+/* mixins
+============================================================================ */
+/* line 5, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  position: relative;
+}
+
+/* line 10, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem > .columns {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* line 15, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem > .columns > .col {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: stretch;
+      align-items: stretch;
+  max-width: 600px;
+}
+
+@media (min-width: 1200px) {
+  /* line 15, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem > .columns > .col {
+    max-width: 100%;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    min-height: 750px;
+    -ms-flex-align: start;
+        align-items: flex-start;
+  }
+}
+
+/* line 35, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem.cq-Editable-dom > .columns {
+  display: block;
+}
+
+/* line 37, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem.cq-Editable-dom > .columns > .col {
+  display: block;
+}
+
+/* line 43, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__picture {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 1200px) {
+  /* line 68, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_mixins.scss */
+  .ecosystem__picture:not(.cq-Editable-dom) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    width: 49.5%;
+    margin-top: 25px;
+  }
+  /* line 59, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__picture .text-media-img {
+    border: 1px dotted #7a8a98;
+    padding: 40px;
+    border-radius: 50%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  /* line 43, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__picture {
+    margin-top: 40px;
+    width: auto;
+  }
+}
+
+/* line 73, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__headline {
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  /* line 73, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__headline {
+    height: 180px;
+  }
+}
+
+/* line 82, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__headline .text-media > div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+/* line 87, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__headline .text-media-title {
+  font-size: 22px;
+  margin: 0 0 25px;
+}
+
+@media (min-width: 1200px) {
+  /* line 87, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__headline .text-media-title {
+    font-size: 30px;
+  }
+}
+
+/* line 95, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__headline .text-media-subtitle {
+  font-family: "Gotham", Arial, sans;
+  font-size: 12px;
+  text-transform: uppercase;
+  -ms-flex-order: -1;
+      order: -1;
+}
+
+/* line 104, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__title {
+  font-size: 22px;
+  line-height: 1.27;
+  padding-left: 40px;
+  min-height: 31px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  margin-bottom: 10px;
+  background-image: url("../../../../../../../dam/fmi-landing/en/assets/badge-vermillion.svg");
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 1200px) {
+  /* line 68, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_mixins.scss */
+  .ecosystem__title:not(.cq-Editable-dom) {
+    display: none;
+  }
+}
+
+/* line 120, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__title b, .ecosystem__title strong {
+  color: #ff4c00;
+  font-weight: normal;
+}
+
+/* line 125, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__title--tomorrow {
+  background-image: url("../../../../../../../dam/fmi-landing/en/assets/badge-keppel.svg");
+  background-repeat: no-repeat;
+}
+
+/* line 127, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__title--tomorrow b, .ecosystem__title--tomorrow strong {
+  color: #35a09c;
+}
+
+/* line 131, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__title--together {
+  background-image: url("../../../../../../../dam/fmi-landing/en/assets/badge-cello.svg");
+  background-repeat: no-repeat;
+}
+
+/* line 133, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__title--together b, .ecosystem__title--together strong {
+  color: #425264;
+}
+
+/* line 138, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__title--tomorrow, .ecosystem__title--together {
+  border-top: 1px solid #BCC4CC;
+  margin-top: 20px;
+  padding-top: 35px;
+  padding-bottom: 2px;
+  background-position: left bottom;
+}
+
+/* line 149, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__text {
+  margin-bottom: 20px;
+  font-family: "Gotham", Arial, sans;
+  font-size: 14px;
+  line-height: 1.57;
+  letter-spacing: .7px;
+  position: relative;
+  z-index: 10;
+}
+
+/* line 157, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__text b, .ecosystem__text strong {
+  display: block;
+  letter-spacing: normal;
+  margin-bottom: 5px;
+}
+
+/* line 161, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+.ecosystem__text b + br, .ecosystem__text strong + br {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  /* line 157, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text b, .ecosystem__text strong {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 149, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text {
+    text-align: right;
+    margin-right: 220px;
+    padding-left: 60px;
+  }
+  /* line 68, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_mixins.scss */
+  .ecosystem__text:not(.cq-Editable-dom) {
+    max-width: 320px;
+    min-height: 130px;
+  }
+  /* line 177, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text::before, .ecosystem__text::after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+  /* line 183, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text::after {
+    width: 30px;
+    height: 30px;
+    background-image: url("../../../../../../../dam/fmi-landing/en/assets/badge-vermillion.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+    background-position: center center;
+    border: 3px solid white;
+    border-radius: 50%;
+    right: -65px;
+    top: 0;
+  }
+  /* line 195, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text::before {
+    border-top: 1px solid #d5d5d5;
+    width: 30px;
+    right: -40px;
+    top: 8px;
+    box-sizing: content-box;
+  }
+  /* line 206, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--today-1 {
+    -ms-flex-order: 10;
+        order: 10;
+  }
+  /* line 208, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--today-1::after {
+    margin-right: -80px;
+  }
+  /* line 211, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--today-1::before {
+    padding-right: 80px;
+    margin-right: -80px;
+  }
+  /* line 216, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--today-2 {
+    -ms-flex-order: 20;
+        order: 20;
+  }
+  /* line 218, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--today-2::after {
+    width: 45px;
+    height: 45px;
+    right: -55px;
+  }
+  /* line 224, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--today-3 {
+    -ms-flex-order: 30;
+        order: 30;
+  }
+  /* line 226, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--today-3::after {
+    margin-right: -3px;
+  }
+  /* line 229, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--today-3::before {
+    padding-right: 3px;
+    margin-right: -3px;
+  }
+  /* line 235, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--tomorrow {
+    margin-right: 0;
+    margin-left: 220px;
+    text-align: left;
+    padding-left: 0;
+    padding-right: 60px;
+  }
+  /* line 91, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_mixins.scss */
+  .ecosystem__text--tomorrow::after {
+    right: initial;
+    left: -65px;
+  }
+  /* line 95, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_mixins.scss */
+  .ecosystem__text--tomorrow::before {
+    right: initial;
+    left: -40px;
+  }
+  /* line 237, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--tomorrow::after {
+    background-image: url("../../../../../../../dam/fmi-landing/en/assets/badge-keppel.svg");
+    background-repeat: no-repeat;
+  }
+  /* line 240, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--tomorrow-1 {
+    -ms-flex-order: 11;
+        order: 11;
+  }
+  /* line 242, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--tomorrow-1::after {
+    margin-left: -80px;
+  }
+  /* line 245, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--tomorrow-1::before {
+    padding-right: 80px;
+    margin-left: -80px;
+  }
+  /* line 250, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--tomorrow-2 {
+    -ms-flex-order: 22;
+        order: 22;
+  }
+  /* line 252, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--tomorrow-2::after {
+    width: 45px;
+    height: 45px;
+    left: -55px;
+  }
+  /* line 257, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--tomorrow-3 {
+    -ms-flex-order: 33;
+        order: 33;
+  }
+  /* line 259, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--tomorrow-3::after {
+    margin-left: -3px;
+  }
+  /* line 262, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--tomorrow-3::before {
+    padding-right: 3px;
+    margin-left: -3px;
+  }
+  /* line 268, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--together {
+    -ms-flex-order: 40;
+        order: 40;
+  }
+  /* line 270, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--together::after {
+    background-image: url("../../../../../../../dam/fmi-landing/en/assets/badge-cello.svg");
+    background-repeat: no-repeat;
+  }
+  /* line 275, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--together-1::after {
+    width: 45px;
+    height: 45px;
+    margin-right: -75px;
+  }
+  /* line 279, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--together-1::before {
+    padding-right: 75px;
+    margin-right: -75px;
+  }
+  /* line 285, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--together-2 {
+    margin-right: 0;
+    margin-left: 220px;
+    text-align: left;
+    padding-left: 0;
+    padding-right: 60px;
+  }
+  /* line 91, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_mixins.scss */
+  .ecosystem__text--together-2::after {
+    right: initial;
+    left: -65px;
+  }
+  /* line 95, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_mixins.scss */
+  .ecosystem__text--together-2::before {
+    right: initial;
+    left: -40px;
+  }
+  /* line 287, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--together-2::after {
+    margin-left: -90px;
+  }
+  /* line 290, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/block-ecosystem.scss */
+  .ecosystem__text--together-2::before {
+    padding-right: 90px;
+    margin-left: -90px;
+  }
+}

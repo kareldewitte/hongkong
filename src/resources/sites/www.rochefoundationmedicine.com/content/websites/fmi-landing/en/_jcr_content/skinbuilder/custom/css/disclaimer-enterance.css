@@ -1,260 +1,0 @@
-/*
-    1. Spacing
-    2. Widths and heights
-    3. Colors
-    4. Fonts
-    5. Icons
-*/
-/* 1. SPACING */
-/* 2. WIDTHS AND HEIGHTS */
-/* 3. COLORS */
-/* 4. FONTS */
-/* 5. ICONS */
-/*
-	imports
-	button and links
-	mixins
-*/
-/* imports
-============================================================================ */
-/*
-    1. Spacing
-    2. Widths and heights
-    3. Colors
-    4. Fonts
-    5. Icons
-*/
-/* 1. SPACING */
-/* 2. WIDTHS AND HEIGHTS */
-/* 3. COLORS */
-/* 4. FONTS */
-/* 5. ICONS */
-/*
-    1. Spacing
-    2. Widths and heights
-    3. Colors
-    4. Fonts
-    5. Icons
-*/
-/* 1. SPACING */
-/* 2. WIDTHS AND HEIGHTS */
-/* 3. COLORS */
-/* 4. FONTS */
-/* 5. ICONS */
-/*
-    1. Breakpoints
-    2. Icons
-    3. Mobile/Desktop Behaviour
-*/
-/* BREAKPOINTS */
-/* ICONS */
-/* Hide/Show elements on mobile/desktop */
-/* Others */
-/* button and links
-============================================================================ */
-/* line 18, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
-.enterance-disclaimer__btn .text-media-button {
-  padding: 0 50px;
-  height: 50px;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  outline: 0;
-  border: 0;
-  background-color: #ff4c00;
-  color: white;
-  cursor: pointer;
-  white-space: nowrap;
-  text-decoration: none;
-  line-height: 1.83;
-  letter-spacing: .8px;
-  font-family: "Gotham", Arial, sans;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-/* line 37, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
-.enterance-disclaimer__btn .text-media-button:link, .enterance-disclaimer__btn .text-media-button:visited {
-  color: white;
-}
-
-/* line 42, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/_helpers.scss */
-.enterance-disclaimer__btn .text-media-button:hover {
-  text-decoration: none;
-  color: white;
-}
-
-/* mixins
-============================================================================ */
-/*
-    1. Spacing
-    2. Widths and heights
-    3. Colors
-    4. Fonts
-    5. Icons
-*/
-/* 1. SPACING */
-/* 2. WIDTHS AND HEIGHTS */
-/* 3. COLORS */
-/* 4. FONTS */
-/* 5. ICONS */
-/*
-    1. Breakpoints
-    2. Icons
-    3. Mobile/Desktop Behaviour
-*/
-/* BREAKPOINTS */
-/* ICONS */
-/* Hide/Show elements on mobile/desktop */
-/* Others */
-/* line 5, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer {
-  width: 100%;
-}
-
-/* line 8, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.layer-popup .enterance-disclaimer {
-  padding: 25px;
-}
-
-@media (min-width: 900px) {
-  /* line 8, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-  .layer-popup .enterance-disclaimer {
-    padding: 70px 120px;
-  }
-}
-
-/* line 16, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer > .columns {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-}
-
-/* line 19, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer > .columns > .col {
-  width: 100%;
-}
-
-/* line 22, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer > .columns > .col:last-child {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-/* line 26, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer > .columns > .col:last-child .textAndMedia {
-  width: auto;
-}
-
-/* line 33, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer a {
-  color: #ff4c00;
-}
-
-/* line 39, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer__btn .text-media-button {
-  margin-right: 15px;
-  margin-bottom: 15px;
-}
-
-/* line 48, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer__btn.btn-second .text-media-button {
-  background: #64ccc9;
-}
-
-/* line 59, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer--patients > .columns > .col:nth-child(2) {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-}
-
-@media (min-width: 1200px) {
-  /* line 59, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-  .enterance-disclaimer--patients > .columns > .col:nth-child(2) {
-    -ms-flex-direction: row;
-        flex-direction: row;
-  }
-}
-
-/* line 68, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer--patients > .columns > .col:nth-child(2) div {
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-
-/* line 73, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer--patients > .columns > .col:nth-child(2) .textAndMedia {
-  width: 100%;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-}
-
-@media (min-width: 1200px) {
-  /* line 73, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-  .enterance-disclaimer--patients > .columns > .col:nth-child(2) .textAndMedia {
-    width: calc( (100%-16px)/2);
-    -ms-flex-preferred-size: calc( (100% - 16px)/2);
-        flex-basis: calc( (100% - 16px)/2);
-  }
-}
-
-/* line 88, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer--patients > .columns > .col:nth-child(2) .enterance-disclaimer__btn .text-media-button {
-  height: auto;
-  min-height: 50px;
-  margin-right: 0;
-  padding: 10px 20px;
-  width: 100%;
-}
-
-/* line 95, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer--patients > .columns > .col:nth-child(2) .enterance-disclaimer__btn .text-media-button br {
-  display: none;
-}
-
-@media (min-width: 1400px) {
-  /* line 95, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-  .enterance-disclaimer--patients > .columns > .col:nth-child(2) .enterance-disclaimer__btn .text-media-button br {
-    display: initial;
-  }
-}
-
-/* line 104, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer--patients > .columns > .col:nth-child(2) .enterance-disclaimer__btn .text-media-button-wrapper {
-  display: -ms-flexbox;
-  display: flex;
-}
-
-/* line 114, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer--patients > .columns > .col:last-child {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-}
-
-/* line 121, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer--patients > .columns > .col:last-child .enterance-disclaimer__btn .text-media-button {
-  background: #8B99A6;
-  margin-left: 8px;
-  margin-right: 8px;
-  min-width: 260px;
-}
-
-/* line 137, /Users/nowakm15/Documents/aem/sites/fmi-landing/src/scss/disclaimer-enterance.scss */
-.enterance-disclaimer--patients .enterance-disclaimer__btn .text-media-button {
-  white-space: normal;
-}
-

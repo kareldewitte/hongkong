@@ -1,56 +1,0 @@
-/*
-    1. Spacing
-    2. Widths and heights
-    3. Colors
-    4. Fonts
-    5. Icons
-*/
-/* 1. SPACING */
-/* 2. WIDTHS AND HEIGHTS */
-/* 3. COLORS */
-/* 4. FONTS */
-/* 5. ICONS */
-/*
-    1. Breakpoints
-    2. Icons
-    3. Mobile/Desktop Behaviour
-*/
-/* BREAKPOINTS */
-/* ICONS */
-/* Hide/Show elements on mobile/desktop */
-/* Others */
-/*
-    1. Spacing
-    2. Widths and heights
-    3. Colors
-    4. Fonts
-    5. Icons
-*/
-/* 1. SPACING */
-/* 2. WIDTHS AND HEIGHTS */
-/* 3. COLORS */
-/* 4. FONTS */
-/* 5. ICONS */
-@import url("base.css?111");
-@import url("layout-header.css?111");
-@import url("layout-footer.css?111");
-@import url("navigation.css?111");
-@import url("jq-modal.css?111");
-@import url("plugin-slick.css?111");
-@import url("window-modal.css?111");
-@import url("disclaimer-cookie.css?111");
-@import url("disclaimer-enterance.css?111");
-@import url("disclaimer-hcp.css?111");
-@import url("module-tabs.css?111");
-@import url("module-modal-custom.css?111");
-@import url("module-tabs-custom.css?111");
-@import url("block-page-teaser.css?111");
-@import url("block-text.css?111");
-@import url("block-starting-points.css?111");
-@import url("block-contact-teaser.css?111");
-@import url("block-section-special.css?111");
-@import url("block-our-services.css?111");
-@import url("block-ecosystem.css?111");
-@import url("block-slider.css?111");
-@import url("block-order-info.css?111");
-

@@ -1454,4 +1454,3 @@ if(!s7viewers.VideoViewer){
 
 	})();
 }
-

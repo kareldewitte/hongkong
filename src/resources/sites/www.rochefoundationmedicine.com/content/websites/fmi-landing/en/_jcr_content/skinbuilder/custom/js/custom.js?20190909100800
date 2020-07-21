@@ -1,0 +1,646 @@
+"use strict";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+(function ($) {
+  $(document).ready(function () {
+    // Detection AEM Mode
+    var aemScriptName = 'clientlibs.min.js',
+        aemEditMode = !!$("script[src*='" + aemScriptName + "']").length,
+        publicViewClass = 'mode-public';
+    !aemEditMode ? $('body').addClass(publicViewClass) : '';
+
+    var pageTeaser = function () {
+      // Prepare background in css from text-media-img in page teaser component
+      var $teaser = $('.page__teaser');
+      $.each($teaser, function () {
+        var $this = $(this),
+            $teaser__img = $this.find('.text-media-img');
+        $this.css({
+          backgroundImage: "url('".concat($teaser__img.attr('src'), "')")
+        });
+        $teaser__img.closest('div').addClass('page__teaser__img');
+      });
+    }();
+
+    var backToTop = function () {
+      var $button = $(".back-top__link");
+      $button.find("a").on('click', function (event) {
+        event.preventDefault();
+        $("html, body").animate({
+          scrollTop: 0
+        }, 'slow');
+      });
+    }();
+
+    var getQueryStringParams = function getQueryStringParams(query) {
+      return query ? (/^[?#]/.test(query) ? query.slice(1) : query).split('&').reduce(function (params, param) {
+        var _param$split = param.split('='),
+            _param$split2 = _slicedToArray(_param$split, 2),
+            key = _param$split2[0],
+            value = _param$split2[1];
+
+        params[key] = value ? decodeURIComponent(value.replace(/\+/g, ' ')) : '';
+        return params;
+      }, {}) : {};
+    };
+
+    var ContactSearch =
+    /*#__PURE__*/
+    function () {
+      function ContactSearch(options) {
+        _classCallCheck(this, ContactSearch);
+
+        var defaults = {
+          $search: $('.search-contact input'),
+          $sendButton: $('button[type="submit"]', '.section-special--in-touch form '),
+          $contactListWrapper: $('.section-special--in-touch .columns > .col:nth-child(2)'),
+          $contactListWrapperSelector: '.section-special--in-touch .columns > .col:nth-child(2)',
+          $noResults: $('.block-contact-list .text-media-description')
+        };
+        this.settings = $.extend({}, defaults, options);
+        this.settings.$contactItems = $('.block-contact-list .text-media-article ol li', $(this.settings.$contactListWrapperSelector)).toArray();
+        return this._init();
+      }
+
+      _createClass(ContactSearch, [{
+        key: "getQuery",
+        value: function getQuery() {
+          var params = window.location.search,
+              query = getQueryStringParams(params)['query'],
+              $input = this.settings.$search;
+          $input.val(query);
+
+          if (query) {
+            this.search(query);
+          }
+        }
+      }, {
+        key: "search",
+        value: function search(query) {
+          var that = this,
+              val = query.toLowerCase().trim(),
+              contactItems = that.settings.$contactItems,
+              items = contactItems.map(function (item) {
+            return [$(item).text().toLowerCase(), item];
+          }),
+              results = items.filter(function (item) {
+            return item[0].indexOf(val) > -1;
+          }).map(function (item) {
+            return item[1];
+          }),
+              $contactList = $('.block-contact-list .text-media-article ol', $(that.settings.$contactListWrapperSelector)),
+              $container = $(that.settings.$contactListWrapperSelector),
+              classShow = 'show',
+              classNoResults = 'no-results';
+          var contactListContent = '';
+          $contactList.empty();
+
+          if (val.length >= 2) {
+            $container.addClass(classShow);
+
+            if (results.length) {
+              contactListContent = results;
+              $container.removeClass(classNoResults);
+            } else {
+              $container.addClass(classNoResults);
+            }
+          } else {
+            $container.removeClass(classShow);
+          }
+
+          $contactList.append(contactListContent);
+        }
+      }, {
+        key: "addEvents",
+        value: function addEvents() {
+          var that = this;
+          that.settings.$sendButton.on('click', function (event) {
+            event.preventDefault();
+
+            if (that.settings.$search.val().length) {
+              $('html, body').animate({
+                scrollTop: that.settings.$contactListWrapper.offset().top
+              }, 500);
+            }
+          });
+          that.settings.$search.on('keyup', function () {
+            var val = $(this).val().toLowerCase().trim();
+            that.search(val);
+          });
+        }
+      }, {
+        key: "_init",
+        value: function _init() {
+          // this.settings.$noResults.addClass('to-hide');
+          this.addEvents();
+          this.getQuery();
+        }
+      }]);
+
+      return ContactSearch;
+    }(); // Global namespace for FMI Micro Site (FMIMS) - for access from SVG component inline script
+
+
+    window.FMIMS = window.FMIMS || {}; // Add method for adding namespaces
+
+    FMIMS.namespace = function (namespace_string) {
+      var parts = namespace_string.split('.'),
+          parent = FMIMS;
+
+      if (parts[0] === 'FMIMS') {
+        parts = parts.sclice(1);
+      }
+
+      for (var i = 0; i < parts.length; i += 1) {
+        if (typeof parent[parts[i]] === 'undefined') {
+          parent[parts[i]] = {};
+        }
+
+        parent = parent[parts[i]];
+      }
+
+      return parent;
+    };
+
+    FMIMS.namespace('constr.ContactSearch');
+    FMIMS.constr.ContactSearch = ContactSearch;
+    /* ==== Initialization ContactSearch component in SVG inline script:
+     if(typeof FMIMS !== 'undefined') {
+        var moduleContactSearch = new FMIMS.constr.ContactSearch();
+        setTimeout(function(){
+            moduleContactSearch.addEvents();
+        }, 100);
+    } else {
+        window.addEventListener('load', function() {
+            moduleContactSearch = new FMIMS.constr.ContactSearch();
+        }, false);
+    }
+     ==== */
+    // Custom Modal (for Our Services page)
+
+    var CustomModal =
+    /*#__PURE__*/
+    function () {
+      function CustomModal(options) {
+        _classCallCheck(this, CustomModal);
+
+        var defaults = {
+          $modal: $('.modal-custom'),
+          bodyClassActive: 'modal-custom-show',
+          modalClassActive: 'modal-custom--active',
+          $trigger: $('.modal-custom-trigger button'),
+          $close: $('.modal-custom__header .text-media-button'),
+          overlayClass: 'modal-custom__overlay'
+        };
+        this.settings = $.extend({}, defaults, options);
+        this.$body = $('body');
+        return this._init();
+      }
+
+      _createClass(CustomModal, [{
+        key: "render",
+        value: function render() {
+          var _this = this;
+
+          var setup = this.settings,
+              trigger = setup.$trigger,
+              close = setup.$close,
+              $body = $('body'),
+              $overlay = $('<div>').addClass(setup.overlayClass);
+          $body.append($overlay);
+          trigger.on('click', function (event) {
+            event.preventDefault();
+
+            _this.open();
+          });
+          close.on('click', function (event) {
+            event.preventDefault();
+
+            _this.close();
+          });
+        }
+      }, {
+        key: "open",
+        value: function open() {
+          this.$body.addClass(this.settings.bodyClassActive);
+          this.settings.$modal.addClass(this.settings.modalClassActive);
+        }
+      }, {
+        key: "close",
+        value: function close() {
+          this.$body.removeClass(this.settings.bodyClassActive);
+          this.settings.$modal.removeClass(this.settings.modalClassActive);
+        }
+      }, {
+        key: "_init",
+        value: function _init() {
+          return this.render();
+        }
+      }]);
+
+      return CustomModal;
+    }();
+
+    var ModalFMOne = new CustomModal({
+      $trigger: $('.service-starting--fm-one .text-media-button'),
+      $modal: $('.modal-custom--fm-one')
+    });
+    var ModalFMAct = new CustomModal({
+      $trigger: $('.service-starting--fm-act .text-media-button'),
+      $modal: $('.modal-custom--fm-act')
+    });
+    var ModalFMOneHeme = new CustomModal({
+      $trigger: $('.service-starting--fm-one-heme .text-media-button'),
+      $modal: $('.modal-custom--fm-one-heme')
+    });
+    var ModalWhatWeDo = new CustomModal({
+      $trigger: $('.tnm--results .text-media-button'),
+      $modal: $('.modal-custom--what-we-do')
+    });
+    var ModalOrderNow = new CustomModal({
+      $trigger: $('.order-page-button .text-media-button'),
+      $modal: $('.modal-custom--order-now')
+    });
+    /* Custom Tabs component (to use inside Custom Modal)
+    ---------------------------------------------------------------------
+        Default structure:
+         .columnLayoutBlock.fmi-tabs -> $target (1 column layout)
+            .fmi-tabs__nav -> tabs nav (rendered by JS)
+            > .columns
+                > .col (tabsWrapperSelector: '> .columns > .col')
+                    .textAndMedia.fmi-tabs__item -> tab item
+                    .textAndMedia.fmi-tabs__item -> tab item
+                    .textAndMedia.fmi-tabs__item -> tab item
+                        > div:first-child -> tab/accordion title - default: parent div for .text-media-title
+                        > div:nth-child(2) -> tab/accordion content - default: parent div for .text-media-article
+    */
+
+    var FMITabs =
+    /*#__PURE__*/
+    function () {
+      function FMITabs(options) {
+        _classCallCheck(this, FMITabs);
+
+        var defaults = {
+          targetClass: 'fmi-tabs',
+          tabsWrapperSelector: '> .columns > .col',
+          classActive: 'fmi-tabs--active',
+          classTabItem: 'fmi-tabs__item',
+          classTabItemTitle: 'fmi-tabs__item__title',
+          classTabItemContent: 'fmi-tabs__item__content',
+          classTabsNav: 'fmi-tabs__nav',
+          classTabsMenu: 'fmi-tabs__menu',
+          classTabsMenuItem: 'fmi-tabs__menu__item',
+          defaultActive: 0 // Number - index of default active tab (start from 0)
+
+        };
+        this.settings = $.extend({}, defaults, options);
+        return this._init();
+      }
+
+      _createClass(FMITabs, [{
+        key: "render",
+        value: function render() {
+          var setup = this.settings,
+              $target = $('.' + setup.targetClass),
+              $tabsWrapper = $target.find(setup.tabsWrapperSelector),
+              $tabsNav = $('<nav>').addClass(setup.classTabsNav),
+              $tabsItems = $tabsWrapper.find('.' + setup.classTabItem),
+              $tabsMenu = $('<ul>').addClass(setup.classTabsMenu);
+          var tabToInit = 0;
+          $tabsWrapper.addClass('fmi-tabs__holder');
+          $target.prepend($tabsNav.append($tabsMenu));
+          $tabsItems.each(function (index) {
+            var $tabsMenuItem = $('<li>').addClass(setup.classTabsMenuItem),
+                $this = $(this),
+                $tabTitle = $this.find('.text-media-title').text();
+            $this.attr('data-fmi-tab', index);
+            $tabsMenu.append($tabsMenuItem.attr('data-fmi-tab', index).text($tabTitle));
+          });
+
+          if (setup.defaultActive < $tabsItems.length && setup.defaultActive >= 0) {
+            tabToInit = setup.defaultActive;
+          }
+
+          this.setActive(tabToInit);
+        }
+      }, {
+        key: "addEvents",
+        value: function addEvents() {
+          var setup = this.settings,
+              $target = $('.' + setup.targetClass),
+              $clickableControls = $target.find('.' + setup.classTabsMenuItem + ',.' + setup.classTabItem),
+              that = this;
+          $clickableControls.on('click', function () {
+            var $elem = $(this),
+                tabIndex = $elem.data("fmiTab");
+
+            if (!$elem.hasClass(setup.classActive)) {
+              that.setActive(tabIndex); // Animated scroll inside custom modal (for mobile only)
+
+              if (window.matchMedia("(max-width: 899px)").matches) {
+                // waiting for for css animations: .5s
+                setTimeout(function () {
+                  $('.modal-custom > .columns > .col:last-child').animate({
+                    // 45 -> it's sum of paddings from parents wrapper
+                    scrollTop: $elem.position().top + 45
+                  });
+                }, 500);
+              }
+            }
+          });
+        }
+      }, {
+        key: "unsetActive",
+        value: function unsetActive() {
+          var setup = this.settings,
+              $target = $('.' + setup.targetClass),
+              $clickableControls = $target.find('.' + setup.classTabsMenuItem + ',.' + setup.classTabItem);
+          $clickableControls.removeClass(setup.classActive);
+        }
+      }, {
+        key: "setActive",
+        value: function setActive(index) {
+          var setup = this.settings,
+              $target = $('.' + setup.targetClass),
+              $menuItems = $target.find('.' + setup.classTabsMenuItem),
+              $tabsItems = $target.find('.' + setup.classTabItem);
+          this.unsetActive();
+          $($menuItems.get(index)).add($tabsItems.get(index)).addClass(setup.classActive);
+        }
+      }, {
+        key: "_init",
+        value: function _init() {
+          this.render();
+          this.addEvents();
+        }
+      }]);
+
+      return FMITabs;
+    }();
+
+    var FOneTabs = new FMITabs({
+      targetClass: 'fmi-tabs--fone',
+      defaultActive: 2
+    });
+    var FActTabs = new FMITabs({
+      targetClass: 'fmi-tabs--fact',
+      defaultActive: 2
+    });
+    var FOneHemeTabs = new FMITabs({
+      targetClass: 'fmi-tabs--fone-heme',
+      defaultActive: 2
+    });
+    var WhatWeDoTabs = new FMITabs({
+      targetClass: 'fmi-tabs--what-we-do',
+      defaultActive: 2
+    });
+    var OrderNowTabs = new FMITabs({
+      targetClass: 'fmi-tabs--order-now',
+      defaultActive: 2
+    });
+
+    var bindEntranceDisclaimer = function () {
+      var cookieValue = $.cookie('entrance-disclaimer-accepted');
+
+      if (cookieValue === 'true') {
+        return; //break
+      }
+
+      var loopDelay = 250,
+          scrollLockClass = 'modal-window-onboard',
+          $html = $('html');
+
+      var _isThereModal = function _isThereModal() {
+        return !!$('.modal-window .enterance-disclaimer').length;
+      };
+
+      var _closeDisclaimer = function _closeDisclaimer() {
+        $.cookie('entrance-disclaimer-accepted', 'true', {
+          // expires: 365,
+          path: '/'
+        });
+        var $modal = $('.modal-window');
+        $html.removeClass(scrollLockClass);
+        $modal.addClass('to-be-closed');
+        setTimeout(function () {
+          return $modal.remove();
+        }, 1000);
+      };
+
+      var loop = function loop() {
+        if (_isThereModal()) {
+          $html.addClass(scrollLockClass);
+          var $disclaimerPatients = $('.modal-window .enterance-disclaimer--patients');
+          $disclaimerPatients.find('.enterance-disclaimer__btn--ok a').each(function () {
+            var $this = $(this);
+            $this.html($this.text().replace(', ', ',<br> '));
+          });
+          return $('.modal-window .enterance-disclaimer__btn--ok .text-media-button').addClass('close-dislcaimer').on('click', function (ev) {
+            ev.preventDefault();
+            return _closeDisclaimer();
+          });
+        }
+
+        setTimeout(loop, loopDelay);
+      };
+
+      return loop();
+    }();
+
+    var scrollToTab = function () {
+      var urlHash = window.location.hash,
+          $tabHolder = $('.tabs-holder'),
+          $tabItem = $(".tab-holder-item-body".concat(urlHash)),
+          $tabItems = $('.tab-holder-item-body'),
+          $tabNavLinks = $('.tab-menu-link'),
+          $links = $('a[href*="#"]'),
+          $window = $('html, body'),
+          classActive = 'active',
+          scrollToTab = function scrollToTab() {
+        $window.animate({
+          scrollTop: $tabHolder.offset().top
+        });
+      };
+
+      if (urlHash && $tabItem.length) {
+        scrollToTab();
+      }
+
+      $links.on('click', function (ev) {
+        var $id = $(this).attr('href').split('#')[1],
+            $target = $('#' + $id, $tabHolder);
+
+        var checkIDhasTab = function checkIDhasTab(str) {
+          return str.split('-')[0] === 'tab' ? true : false;
+        };
+
+        if ($target.length && checkIDhasTab($id)) {
+          ev.preventDefault();
+          var $currentLink = $tabNavLinks.filter("[href=\"#".concat($id, "\"]"));
+          $tabNavLinks.removeClass(classActive);
+          $currentLink.addClass(classActive);
+          $tabItems.removeClass(classActive).css('display', 'none').filter("[id=\"".concat($id, "\"]")).addClass(classActive).css('display', 'block');
+          scrollToTab();
+        }
+      });
+    }();
+
+    var trackURL = function () {
+      var urlSearch = window.location.search,
+          urlParams = getQueryStringParams(urlSearch),
+          $fmiTabs = $('.fmi-tabs'),
+          trackedParam = 'cid',
+          getLocation = function getLocation(href) {
+        var l = document.createElement("a");
+        l.href = href;
+        return l;
+      },
+          linksInTabs = $('a', $fmiTabs);
+
+      if (urlParams[trackedParam]) {
+        sessionStorage.setItem(trackedParam, urlParams[trackedParam]);
+      }
+
+      linksInTabs.each(function () {
+        var self = $(this),
+            selfHref = self.attr('href'),
+            getSelfHref = function getSelfHref() {
+          return self.attr('href');
+        },
+            getTrackedParam = sessionStorage.getItem(trackedParam),
+            selfHrefHasParams = function selfHrefHasParams() {
+          return getSelfHref().indexOf('?') > -1;
+        },
+            selfHrefPath = getLocation(selfHref).pathname,
+            contactPath = '/home/contact-us.html';
+
+        var prefixParams = '?';
+
+        if (getTrackedParam) {
+          if (selfHrefHasParams()) {
+            prefixParams = '&';
+          }
+
+          self.attr('href', getSelfHref() + prefixParams + trackedParam + '=' + getTrackedParam);
+        }
+
+        if (selfHrefPath === contactPath) {
+          var searchParam = 'query',
+              searchParamValue = self.text(),
+              paramPrefix = '&';
+          selfHrefHasParams() ? '' : paramPrefix = '?';
+          self.attr('href', getSelfHref() + paramPrefix + searchParam + '=' + encodeURI(searchParamValue));
+        }
+      });
+    }();
+
+    var HCPdisclaimer = function () {
+      var $trigger = $('.website-current--public .text-media-button'),
+          $modalSource = $('#modal-hcp-disclaimer'),
+          $body = $('body');
+      $trigger.on('click', function (event) {
+        event.preventDefault();
+        $modalSource.modal({
+          showClose: false,
+          modalClass: "jq-modal",
+          // CSS class added to the element being displayed in the modal.
+          blockerClass: "blocker"
+        });
+        $body.on('click', 'a[href="#close-modal"]', function (event) {
+          event.preventDefault();
+          $.modal.close();
+        });
+        return false;
+      });
+    }();
+
+    var PublicSiteDisclaimer = function () {
+      var $trigger = $('.website-current--hcp .text-media-button'),
+          $modalSource = $('#modal-public-site-disclaimer'),
+          $body = $('body');
+      $trigger.on('click', function (event) {
+        event.preventDefault();
+        $modalSource.modal({
+          showClose: false,
+          modalClass: "jq-modal",
+          // CSS class added to the element being displayed in the modal.
+          blockerClass: "blocker"
+        });
+        $body.on('click', 'a[href="#close-modal"]', function (event) {
+          event.preventDefault();
+          $.modal.close();
+        });
+        return false;
+      });
+    }();
+
+    var trackPatientsOrder = function () {
+      var $trigger = $('.nav__main a[href*="order-now"]');
+      $trigger.on('click', function (event) {
+        gtag_report_conversion();
+      });
+    }(); // Extend links in header and footer
+
+
+    if (!aemEditMode) {
+      var $mainNav = $('.nav__main .menu-wrapper'),
+          $linkHeaderAccess = $mainNav.find('a[href*="access---funding"]'),
+          $linkFooterReferencesNew = $('.references-link-footer .text-media-button').attr('href'),
+          $linkFooterReferences = $('.footer__menu a[href*="references"]');
+
+      if ($linkHeaderAccess.length) {
+        var newAccessLink = $mainNav.data('accessFundingLink');
+        $linkHeaderAccess.attr('href', newAccessLink);
+      }
+
+      if ($linkFooterReferencesNew.length) {
+        $linkFooterReferences.attr('href', $linkFooterReferencesNew);
+      }
+    } // Initializing Slick Sliders
+
+
+    if (!aemEditMode) {
+      var $sliders = $('.carousel-holder .columns'),
+          $window = $(window),
+          slickBreakOff = 600,
+          slickSettings = {
+        dots: true,
+        adaptiveHeight: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 7500
+      };
+      $sliders.slick(slickSettings);
+      $window.on('resize', function () {
+        if ($window.width() < slickBreakOff) {
+          if ($sliders.hasClass('slick-initialized')) {
+            $sliders.slick('unslick');
+          }
+
+          return;
+        }
+
+        if (!$sliders.hasClass('slick-initialized')) {
+          return $sliders.slick(slickSettings);
+        }
+      });
+      $sliders.on('afterChange', function () {// Waypoint.refreshAll();
+      });
+    }
+  });
+})(jQuery);
