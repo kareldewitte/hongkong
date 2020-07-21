@@ -1,4 +1,4 @@
 project_root: src/resources/ 
 sites_root: src/resources/sites/ 
-workers: 2000
+workers: 1
 bind: localhost:8000
