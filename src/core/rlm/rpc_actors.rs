@@ -32,6 +32,19 @@ pub mod rpc_actors{
         //pub page_cache:TtlCache<SendRequest,Response>
     }
 
+    pub trait utils{
+        fn setHeaders(&mut self,rpc:&RPC)->&mut Self;
+    }
+
+    impl utils for ureq::Request{
+        fn setHeaders(&mut self, rpc: &RPC)->&mut Self{
+            for head in &rpc.headers{
+                let h:Vec<&str> = head.split(":").collect();
+                self.set(h[0],h[1]);
+            }
+            self
+        }
+    }
     
     
     impl Message for SendRequest {
@@ -43,14 +56,16 @@ pub mod rpc_actors{
             type Context = SyncContext<Self>;
     }
 
+
+
     fn call(rpc:&RPC)-> ureq::Response{
         
         let resp = match &rpc.method{
             Method::GET => {
                 
                 ureq::get(&rpc.uri)
-                .set("Content-Type", &mime::APPLICATION_JSON.to_string())
-                .timeout_connect(1000)
+                .setHeaders(&rpc)
+                .timeout_connect(rpc.timeout.into())
                 .call()
                 
             },
@@ -60,8 +75,8 @@ pub mod rpc_actors{
                         
                         let read = Cursor::new(b.clone().into_bytes());
                         ureq::post(&rpc.uri)
-                        .set("Content-Type", &mime::APPLICATION_JSON.to_string())
-                        .timeout_connect(1000)
+                        .setHeaders(&rpc)
+                        .timeout_connect(rpc.timeout.into())
                         .send(read)
                     },
                     None=>{

@@ -45,7 +45,8 @@ pub struct RPC{
     pub uri:String,
     pub method: Method,
     pub body:Option<String>,
-    pub result_name:String,
+    pub headers: Vec<String>,
+    pub timeout:u16,
     pub ttl:u16
 }
 

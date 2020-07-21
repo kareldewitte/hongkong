@@ -18,10 +18,13 @@ components:
       #uri: "https://www.google.com/"
       uri: "http://api.icndb.com/jokes/random"
       #uri: "http://localhost:8000/"
+      headers:
+        - "Content-Type: application/json"
       method: GET
+      timeout: 1000
       ttl: 1
       body: some contents
-      result_name: "rpcresult" 
+      
 
 
 
@@ -181,4 +184,14 @@ components:
 
 
 
-
+
+
+
+
+
+
+
+
+
+
+

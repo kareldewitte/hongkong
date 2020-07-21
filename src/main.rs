@@ -30,7 +30,6 @@ use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
 use walkdir::WalkDir;
 
-static sitesRoot: &str = "/home/karel/Projects/rustpjcts/test/proxy_01/src/resources/sites/";
 
 use crate::core::middle::transformer::{build_context, Calls, WebContext};
 use crate::core::rlm::cache::{Cache, CacheFunctions, Page};
@@ -219,18 +218,18 @@ async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
     }
 }
 
-async fn serve(req: HttpRequest) -> Result<afs::NamedFile, Error> {
-    let path: std::path::PathBuf = PathBuf::from(
-        sitesRoot.to_owned() + "/" + req.match_info().get("path").unwrap_or("index.html"),
-    );
-    let file = afs::NamedFile::open(path)?;
-    Ok(file
-        .use_last_modified(true)
-        .set_content_disposition(ContentDisposition {
-            disposition: DispositionType::Attachment,
-            parameters: vec![],
-        }))
-}
+// async fn serve(req: HttpRequest) -> Result<afs::NamedFile, Error> {
+//     let path: std::path::PathBuf = PathBuf::from(
+//         sitesRoot.to_owned() + "/" + req.match_info().get("path").unwrap_or("index.html"),
+//     );
+//     let file = afs::NamedFile::open(path)?;
+//     Ok(file
+//         .use_last_modified(true)
+//         .set_content_disposition(ContentDisposition {
+//             disposition: DispositionType::Attachment,
+//             parameters: vec![],
+//         }))
+// }
 
 //#[actix_rt::main]
 fn main() {
