@@ -242,7 +242,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     if(args.len()>1){
         //println!("{:?}",args[1]);
-        let mut file = fs::File::open(&(args[1].clone()+"/config.yaml")).expect("Unable to open file");
+        let mut file = fs::File::open(&(args[1].clone())).expect("Unable to open file");
         server_config = serde_yaml::from_reader::<_,ServerConfig>(file).unwrap();
         //println!("{:?}",server_config);
 

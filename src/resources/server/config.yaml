@@ -1,6 +1,6 @@
-project_root: /app/src/resources/ 
-sites_root: /app/src/resources/sites/ 
+project_root: /home/karel/Projects/rustpjcts/test/hongkong-rfm/src/resources/ 
+sites_root: /home/karel/Projects/rustpjcts/test/hongkong-rfm/src/resources/sites/ 
 workers: 200
 bind: 0.0.0.0
-port: PORT
+port: 8080
 default_site: www.rochefoundationmedecine.com
