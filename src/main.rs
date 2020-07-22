@@ -29,7 +29,7 @@ use std::str;
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
 use walkdir::WalkDir;
-
+use std::collections::HashMap;
 
 use crate::core::middle::transformer::{build_context, Calls, WebContext};
 use crate::core::rlm::cache::{Cache, CacheFunctions, Page};
@@ -118,6 +118,7 @@ async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
     };
 
     
+    
     let postfix = host.to_owned() + "/" + req.match_info().get("path").unwrap_or("index.html");
     let path = format!("{}{}", servconf.sites_root, postfix);
     //println!("requested {:?}",&path);
@@ -159,6 +160,10 @@ async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
                                 let bodymut = rpcexec.send(req).await.unwrap().unwrap();
                                 let mm = bodymut.lock().unwrap();
                                 wb.resp = Some(mm.clone());
+                                wb.json_object = match serde_json::from_str(&mm.clone()){
+                                    Ok(res)=> Some(res),
+                                    Err(e)=> None
+                                };
                                 drop(mm);
                             }
                             Err(e) => {

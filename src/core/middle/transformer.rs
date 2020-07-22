@@ -44,7 +44,8 @@ pub struct WebContext<'a>{
     params:HashMap<&'a str,Vec<&'a str>>,
     //cookies:&'a str
     //headers:HeaderMap
-    pub resp:Option<String>
+    pub resp:Option<String>,
+    pub json_object:Option<HashMap<String, serde_json::Value>>,
 }
 
 fn from_param(values:&str)-> Vec<&str>{
@@ -81,7 +82,8 @@ pub fn build_context<'a>(req:&'a HttpRequest)-> WebContext<'a>{
     WebContext{
         path:req.path(),
         params:params,
-        resp:None
+        resp:None,
+        json_object:None,
     }
 }
 
@@ -111,6 +113,7 @@ impl Inner for Component{
     fn replace(&self,result:Result<String>,t:&NodeRef) -> () {
         match result {
             Ok(e)=>{
+                //let h = htmlescape::decode_html(&e).unwrap();
                 let nref = kuchiki::parse_html().one(e);
                 //let parent:NodeRef = t.parent().unwrap();
                 let mut children = true;
@@ -200,7 +203,7 @@ impl Calls for Component{
                         context.insert("ctx", "bla");
                     }
                 }
-                
+                //make this better
                 let result = Tera::one_off(&template, &context, false);
                 self.replace(result,t);   
             },

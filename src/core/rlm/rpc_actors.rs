@@ -34,6 +34,7 @@ pub mod rpc_actors{
 
     pub trait utils{
         fn setHeaders(&mut self,rpc:&RPC)->&mut Self;
+        fn setAuth(&mut self,rpc:&RPC)->&mut Self;
     }
 
     impl utils for ureq::Request{
@@ -43,6 +44,12 @@ pub mod rpc_actors{
                 self.set(h[0],h[1]);
             }
             self
+        }
+        fn setAuth(&mut self,rpc: &RPC)->&mut Self{
+            match &rpc.auth{
+                Some(auth)=>self,
+                None=>self
+            }
         }
     }
     

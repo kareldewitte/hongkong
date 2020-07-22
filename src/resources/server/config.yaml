@@ -3,4 +3,4 @@ sites_root: /home/karel/Projects/rustpjcts/test/hongkong-rfm/src/resources/sites
 workers: 200
 bind: 0.0.0.0
 port: 8080
-default_site: www.rochefoundationmedecine.com
+default_site: www.rochefoundationmedicine.com

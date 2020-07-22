@@ -10,19 +10,23 @@ components:
     call: replace_and_render
     rpc: null 
   - id: comp3
-    css_selector: section.bg-white:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1)
+    css_selector: div.columnLayoutBlock:nth-child(6) > div:nth-child(1)
     template_file: commons/templates/ssr_rpc.jinja
     call: replace_and_render
     rpc: 
       #uri: "https://postman-echo.com/get?foo1={{webcontext.params.p[0]}}&foo2={{webcontext.params.b[0]}}"
       #uri: "https://www.google.com/"
-      uri: "http://api.icndb.com/jokes/random"
+      #uri: "http://api.icndb.com/jokes/random"
       #uri: "http://localhost:8000/"
+      uri: "https://emearmi--cmspoc.my.salesforce.com/services/data/v49.0/connect/cms/delivery/channels/0ap1x000000CaSyAAK/contents/query"
+      auth: null
       headers:
         - "Content-Type: application/json"
+        - "Authorization: Bearer 00D1x0000000NKo!AQIAQENdfEWULP3k0xhZWGWP7CZGrrYnSYVFk_r.Pmd7yolQUMhtMxxiHYckegDHTTOKCxK2ZxmW18PZQ5I7liIj9TQxNWb5"
       method: GET
       timeout: 1000
       ttl: 1
+      output: json_object
       body: some contents
       
 
@@ -194,4 +198,19 @@ components:
 
 
 
-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

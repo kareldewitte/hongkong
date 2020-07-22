@@ -48,6 +48,7 @@ pub struct RPC{
     pub body:Option<String>,
     pub headers: Vec<String>,
     pub timeout:u16,
+    pub auth: Option<String>,
     pub ttl:u16
 }
 
