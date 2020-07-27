@@ -2,7 +2,7 @@
                 <div class="textAndMedia   section">
     <div class="text-media " data-component="text-media" data-content-featured="false">
         <div>
-        <img class="text-media-img" data-desktop="/dam/images/rectangle-2b.jpg" src="/dam/images/rectangle-2b.jpg">
+        <img class="text-media-img" data-desktop='{{webcontext.json_object["items"][0]["contentNodes"]["bannerImage"]["url"]}}' src='{{webcontext.json_object["items"][0]["contentNodes"]["bannerImage"]["url"]}}'>
 </div>
     </div>
 </div>
@@ -11,10 +11,10 @@
                 <div class="textAndMedia   section">
     <div class="text-media " data-component="text-media" data-content-featured="false">
         <div>
-        <h1 class="text-media-title"><p>A comprehensive  approach to genomic profiling</p>
+        <h1 class="text-media-title"><p>{{ webcontext.json_object["items"][0]["contentNodes"]["title"]["value"]|as_html }}</p>
 </h1>
 </div>
-<p>{{webcontext.resp }}</p>
+
 <p></p>
 <div>
  
@@ -24,9 +24,11 @@
     <div class="text-media-button-wrapper">
         <a class="text-media-button" href="home/what-we-do.html">MORE ABOUT WHAT WE DO</a>
     </div>
+<!-- {{webcontext.resp }}-->
 </div>
 </div>
 </div>
+
 </section>
 
 
@@ -44,3 +46,5 @@
 
 
 
+
+
