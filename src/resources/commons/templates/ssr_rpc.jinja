@@ -18,7 +18,7 @@
 <p></p>
 <div>
  
-    <div class="text-media-description">{{ webcontext.json_object["items"][0]["contentNodes"]["body"]["value"]|safe }}</div>
+    <div class="text-media-description">{{ webcontext.json_object["items"][0]["contentNodes"]["body"]["value"]|as_html }}</div>
 </div><div>
     
     <div class="text-media-button-wrapper">
@@ -30,4 +30,17 @@
 </section>
 
 
-
+
+
+
+
+
+
+
+
+
+
+
+
+
+

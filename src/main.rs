@@ -37,7 +37,7 @@ use crate::core::rlm::parser::{Component, Registry,ServerConfig};
 use crate::core::rlm::rloader::exposer;
 use crate::core::rlm::rpc_actors::rpc_actors::{RpcExecutor, SendRequest};
 use actix::prelude::*;
-
+use tera::Tera;
 
 #[derive(Serialize)]
 struct WebPage {
@@ -256,13 +256,20 @@ fn main() {
         return
     }
     
-    
+    let tera = match Tera::new(&(server_config.project_root.clone() + &"/**/*.jinja")) {
+        Ok(t) => t,
+        Err(e) => {
+            println!("Parsing error(s): {}", e);
+            ::std::process::exit(1);
+        }
+    };
 
+  
 
   
     //pages/main.yaml
 
-    let regmutex: Arc<Mutex<Registry>> = match exposer::init(server_config.project_root.clone()) {
+    let regmutex: Arc<Mutex<Registry>> = match exposer::init(server_config.project_root.clone(),tera) {
         Ok(rtmx) => {
             Arc::clone(&rtmx)
             //Arc::new(Mutex::new(Registry::default()))

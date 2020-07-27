@@ -14,6 +14,8 @@ use std::io::prelude::*;
 use kuchiki::traits::*;
 use std::sync::{Arc, Mutex};
 use std::env;
+use tera::Tera;
+
 
 #[derive(Hash)]
 #[derive(Debug,Eq, PartialEq, Serialize, Deserialize,Clone)]
@@ -175,7 +177,8 @@ pub struct Registry{
     pub compMap:HashMap<String,Component>,
     pub ruleMap:HashMap<String,Rule>,
     pub templates:HashMap<String,Vec<u8>>,
-    pub contents:HashMap<String,Content>
+    pub contents:HashMap<String,Content>,
+    pub tera:Tera
 }
 
 pub trait Loader{
@@ -191,7 +194,8 @@ impl Default for Registry{
             compMap:HashMap::new(),
             ruleMap:HashMap::new(),
             templates:HashMap::new(),
-            contents:HashMap::new()
+            contents:HashMap::new(),
+            tera:Tera::default()
         }
     }
 }
@@ -227,7 +231,11 @@ impl Loader for Registry{
                     match path.strip_prefix(this.init_path.clone()){
                         Ok(key)=>{
                             println!("inserting template {:?}",key);
-                            this.templates.insert(String::from(key.to_string_lossy()), contentu8);   
+                            this.templates.insert(String::from(key.to_string_lossy()), contentu8);
+                            match this.tera.full_reload(){
+                                Ok(r)=> println!("Reload ok"),
+                                Err(e)=> println!("Problem reloading {:?}",e)
+                            };   
                         },
                         Err(e)=>{
                             println!("issue loading template {:?} {:?}",e,path);

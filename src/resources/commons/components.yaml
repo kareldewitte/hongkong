@@ -25,10 +25,14 @@ components:
         - "Authorization: Bearer 00D1x0000000NKo!AQIAQL7vgTL7dcFsKfacYJQUIhahhtn80evuNIbcsTXaqCVKAX1SpZPHyoyAfGzD8FPQcEvumQeycskGM2AC3SZqzNyM9tdJ"
       method: GET
       timeout: 1000
-      ttl: 1
+      ttl: 10
       output: json_object
       body: some contents
       
+
+
+
+
 
 
 

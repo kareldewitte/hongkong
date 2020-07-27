@@ -175,16 +175,16 @@ impl Calls for Component{
     fn replace_and_render(&self,t:&NodeRef,r:&Registry,req: HttpRequest, wb: &WebContext){
         let now = Instant::now();
         //do null check
-        let u8templ:&Vec<u8> = match r.templates.get(&self.template_file){
-            Some(e)=>{
-                e
-            },
-            None=>{
-               return;
-            }
-        };
+        // let u8templ:&Vec<u8> = match r.templates.get(&self.template_file){
+        //     Some(e)=>{
+        //         e
+        //     },
+        //     None=>{
+        //        return;
+        //     }
+        // };
         
-        let template = str::from_utf8(&u8templ.clone()).unwrap().to_string();
+        //let template = str::from_utf8(&u8templ.clone()).unwrap().to_string();
         let mut context = Context::new();
         let attr = t.as_element().unwrap().attributes.borrow();
         let tdata = attr.get("data-content-id");
@@ -204,7 +204,8 @@ impl Calls for Component{
                     }
                 }
                 //make this better
-                let result = Tera::one_off(&template, &context, false);
+                //let result = Tera::one_off(&template, &context, false);
+                let result = r.tera.render(&self.template_file, &context);
                 self.replace(result,t);   
             },
             None =>{

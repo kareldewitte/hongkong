@@ -111,7 +111,7 @@ pub mod rpc_actors{
             //println!("misses {:?}",self.cache.);
             body = match self.component_cache.get(&msg){
                 Some(resp)=>{
-                    println!("Found for sendrequest {:?}",resp);
+                    //println!("Found for sendrequest {:?}",resp);
                     resp.to_string()
                 },
                 None=> {
