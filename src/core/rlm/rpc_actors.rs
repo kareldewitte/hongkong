@@ -104,14 +104,14 @@ pub mod rpc_actors{
     impl Handler<SendRequest> for RpcExecutor {
         type Result = Result<Mutex<String>, std::io::Error>;
         fn handle(&mut self, msg: SendRequest, _: &mut Self::Context) -> Self::Result {
-            println!("begin blocking");
+            
             let rpc = &msg.rpc;
             let mut body = String::default();
             //let kvs: Vec<_> = self.cache.iter().collect();
             //println!("misses {:?}",self.cache.);
             body = match self.component_cache.get(&msg){
                 Some(resp)=>{
-                    println!("Found for sendrequest {:?}",resp);
+                    //println!("Found for sendrequest {:?}",resp);
                     resp.to_string()
                 },
                 None=> {

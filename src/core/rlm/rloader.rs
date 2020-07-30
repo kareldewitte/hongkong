@@ -9,14 +9,28 @@ pub mod exposer {
     use std::time::Duration;
     use std::collections::HashMap;
     use std::sync::{Arc, Mutex};
+    use tera::{Tera,try_get_value};
+    use htmlescape;
 
-        
 
-    pub fn init(file_name:String) -> Result<(Arc<Mutex<Registry>>), Box<std::error::Error>>{
+
+    //#[cfg(feature = "builtins")]
+    fn to_html_filter(value: &tera::Value, _: &HashMap<String, tera::Value>) -> tera::Result<tera::Value> {
+        let s = try_get_value!("as_html", "value", String, value);
+        Ok(tera::Value::String(htmlescape::decode_html(&s).unwrap()))
+    }
+    
+    
+    pub fn init(file_name:String,tera:Tera) -> Result<(Arc<Mutex<Registry>>), Box<std::error::Error>>{
         
         let (tx, rx) = channel();
         let mut registry = Registry::default();
         registry.init_path = file_name.clone();
+        registry.tera = tera;
+        registry.tera.register_filter("as_html",to_html_filter);
+        
+        
+
         println!("Init path :{:?}",registry.init_path);
         let regmutex: Arc<Mutex<Registry>> = Arc::new(Mutex::new(registry));
         let regmutex_c = Arc::clone(&regmutex);  

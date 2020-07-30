@@ -18,14 +18,14 @@ components:
       #uri: "https://www.google.com/"
       #uri: "http://api.icndb.com/jokes/random"
       #uri: "http://localhost:8000/"
-      uri: "https://emearmi--cmspoc.my.salesforce.com/services/data/v49.0/connect/cms/delivery/channels/0ap1x000000CaSyAAK/contents/query"
+      uri: "https://emearmi--cmspoc.my.salesforce.com/services/data/v49.0/connect/cms/delivery/channels/{{rep.content.channel_id}}/contents/query"
       auth: null
       headers:
         - "Content-Type: application/json"
-        - "Authorization: Bearer 00D1x0000000NKo!AQIAQENdfEWULP3k0xhZWGWP7CZGrrYnSYVFk_r.Pmd7yolQUMhtMxxiHYckegDHTTOKCxK2ZxmW18PZQ5I7liIj9TQxNWb5"
+        - "Authorization: Bearer 00D1x0000000NKo!AQIAQGrCkKJ8idIuIG.C1Tm2HeSmMgEpm4kxmPSeWD_UIK1A650LmjnI4uuFbqgdR_eKFYQgNesleQX.dNO8RdNoU60t2M8K"
       method: GET
       timeout: 1000
-      ttl: 1
+      ttl: 10
       output: json_object
       body: some contents
       
@@ -213,4 +213,29 @@ components:
 
 
 
-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
