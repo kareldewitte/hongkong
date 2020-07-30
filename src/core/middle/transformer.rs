@@ -16,7 +16,7 @@ use actix::prelude::*;
 
 use tera::{Tera,Context,Result};
 use crate::core::rlm::rloader::{exposer};
-use crate::core::rlm::parser::{Component,Registry};
+use crate::core::rlm::parser::{Component,Registry,Content};
 use crate::core::rlm::rpc_actors::rpc_actors::{RpcExecutor,SendRequest};
 use kuchiki::traits::*;
 use kuchiki::{Doctype, DocumentData, ElementData, Node, NodeData, NodeRef};
@@ -63,7 +63,6 @@ fn from_param(values:&str)-> Vec<&str>{
 pub fn build_context<'a>(req:&'a HttpRequest)-> WebContext<'a>{
     let mut params:HashMap<&'a str,Vec<&'a str>> = HashMap::new();
     let q = req.query_string();
-    println!("Q{:?}",q);
     if q!= "" {
      for kp in q.split("&"){
         let kv:Vec<&str> = kp.split("=").clone().collect();
@@ -99,8 +98,8 @@ pub trait Calls{
     fn replace_and_render(&self,t:&NodeRef,r:&Registry,req: HttpRequest, wb: &WebContext);
     //fn replace_and_render_remote(&self,t:&NodeRef,r:&Registry);
     fn remove(&self,t:&NodeRef); 
-
-    fn get_rpc(&self,wb:&WebContext)->Result<SendRequest>;
+    fn get_content(&self,t:&NodeRef,r:&Registry)->Option<Content>;
+    fn get_rpc(&self,wb:&WebContext,content:Option<Content>)->Result<SendRequest>;
 }
 
 trait Inner{
@@ -138,26 +137,25 @@ impl Inner for Component{
 
 }
 
-// async fn perform(uri:&str)-> ClientRequest{
-//     let client = Client::default();
-//     let response = client.get("http://www.rust-lang.org")
-//     .header("User-Agent", "Actix-web")
-//     .send().await;
-//     response
-// }
 
 
 impl Calls for Component{
 
-    fn get_rpc(&self,wb: &WebContext)->Result<SendRequest>{
+    fn get_rpc(&self,wb: &WebContext,content:Option<Content>)->Result<SendRequest>{
         let mut context = Context::new();
-        context.insert("webcontext",&wb);
+        context.insert("webcontext",&wb);  
+        match content{
+            Some(e)=> context.insert("rep",&e),
+            None => {}//println!("No content for {:?}",&self.rpc)
+        };  
         match &self.rpc{
             Some(rpc)=>{
                 match Tera::one_off(&rpc.uri,&context, true){
                     Ok(uri)=>{
-                        let now = Instant::now();
-                        let sr = SendRequest{rpc:rpc.clone()};
+                        //println!("rendered uri {:?}",uri);
+                        let mut rpcs = rpc.clone();
+                        rpcs.uri = uri;
+                        let sr = SendRequest{rpc:rpcs};
                         Ok(sr)   
                     },
                     Err(e) =>{
@@ -169,6 +167,26 @@ impl Calls for Component{
                 Err(tera::Error::msg("No RPC url"))
             }
         }
+    }
+
+    fn get_content(&self,t: &NodeRef, r: &Registry)->Option<Content>{
+               
+        let attr = t.as_element().unwrap().attributes.borrow();
+        let tdata = attr.get("data-content-id");
+        //println!("found {:?}",tdata);
+        match tdata{
+            Some(e) => {
+                match r.contents.get(e){
+                    Some(co)=>{
+                        Some(co.clone())
+                    },
+                    None => None
+                }
+            }
+            ,
+            None => None
+        }
+            
     }
 
 
@@ -186,32 +204,24 @@ impl Calls for Component{
         
         //let template = str::from_utf8(&u8templ.clone()).unwrap().to_string();
         let mut context = Context::new();
-        let attr = t.as_element().unwrap().attributes.borrow();
-        let tdata = attr.get("data-content-id");
-
-        match tdata{
-            Some(e) =>{
-                //println!(" found {:?}",e);
-                //context.insert("context", r.contents.get());
-                match r.contents.get(e){
+        
+        match self.get_content(t,r){
                     Some(e) => {
                         //println!("{:?}",e);
-                        context.insert("rep",e);
+                        context.insert("rep",&e);
                         context.insert("webcontext",&wb);
+                        //execute request in here
+                        let result = r.tera.render(&self.template_file, &context);
+                        self.replace(result,t);   
+                        
                     },
                     None => {
                         context.insert("ctx", "bla");
                     }
                 }
-                //make this better
-                //let result = Tera::one_off(&template, &context, false);
-                let result = r.tera.render(&self.template_file, &context);
-                self.replace(result,t);   
-            },
-            None =>{
-                //println!("No id found nothing rendered");
-            }
-        };
+             
+
+       
        
     }
 

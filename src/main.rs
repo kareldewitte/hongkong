@@ -33,7 +33,7 @@ use std::collections::HashMap;
 
 use crate::core::middle::transformer::{build_context, Calls, WebContext};
 use crate::core::rlm::cache::{Cache, CacheFunctions, Page};
-use crate::core::rlm::parser::{Component, Registry,ServerConfig};
+use crate::core::rlm::parser::{Component,Content, Registry,ServerConfig};
 use crate::core::rlm::rloader::exposer;
 use crate::core::rlm::rpc_actors::rpc_actors::{RpcExecutor, SendRequest};
 use actix::prelude::*;
@@ -108,6 +108,35 @@ async fn greet(req: HttpRequest) -> impl Responder {
 }
 
 
+async fn performcall<'a>(req:&'a HttpRequest,content:Option<Content>,comp:&Component,rpcexec:&Addr<RpcExecutor>)->WebContext<'a>{
+            let mut wb: WebContext = build_context(&req);
+            
+            // perform query
+            let now = Instant::now();
+            let _ = match comp.get_rpc(&wb,content) {
+                Ok(rq) => {
+                    let bodymut = rpcexec.send(rq).await.unwrap().unwrap();
+                    let mm = bodymut.lock().unwrap();
+                    wb.resp = Some(mm.clone());
+                    wb.json_object = match serde_json::from_str(&mm.clone()){
+                        Ok(res)=> Some(res),
+                        Err(e)=> None
+                    };
+                    drop(mm);
+                }
+                Err(e) => {
+                    //warning!("Message {:?}", e);
+                }
+            };
+            //println!("request executed in {}mus", now.elapsed().as_micros());
+            wb
+}
+
+
+
+
+
+
 async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
     
     let servconf = (*data.servconf.deref()).lock().unwrap();
@@ -143,7 +172,7 @@ async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
     if contentu8 != "None".as_bytes() {
         if mime == "text/html".to_string() {
             let now = Instant::now();
-            println!("size {:?}",pagecache.size());
+            //println!("size {:?}",pagecache.size());
             match pagecache.getUpdate(path.clone()) {
                 Ok(page) => {
                     let document = page.node;
@@ -151,27 +180,7 @@ async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
 
                         let css_selector = comp.css_selector.clone();
                         let matches = document.select(&css_selector);
-                        // build request and execute request here
-                        let mut wb: WebContext = build_context(&req);
-                        // perform query
-                        let now = Instant::now();
-                        let _ = match comp.get_rpc(&wb) {
-                            Ok(req) => {
-                                let bodymut = rpcexec.send(req).await.unwrap().unwrap();
-                                let mm = bodymut.lock().unwrap();
-                                wb.resp = Some(mm.clone());
-                                wb.json_object = match serde_json::from_str(&mm.clone()){
-                                    Ok(res)=> Some(res),
-                                    Err(e)=> None
-                                };
-                                drop(mm);
-                            }
-                            Err(e) => {
-                                println!("Message {:?}", e);
-                            }
-                        };
-                        println!("request executed in {}mus", now.elapsed().as_micros());
-
+                      
                         match matches {
                             Ok(m) => {
                                 let mut counter = 0;
@@ -183,6 +192,9 @@ async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
                                 for css_match in nodevec {
                                     //println!("Found for {:?}:{:?}", css_selector, counter);
                                     let as_node = css_match.as_node();
+                                    let content = comp.get_content(as_node,&reg);                                    
+                                    let wb: WebContext = performcall(&req, content, &comp,rpcexec).await;
+
                                     let result = match &comp.call[..] {
                                         "remove" => comp.remove(as_node),
                                         "replace_and_render" => {
@@ -197,12 +209,12 @@ async fn render(req: HttpRequest, data: web::Data<AppState>) -> impl Responder {
                         };
                         //println!("Ending ");
                     }
-                    let mut doc_content: String = document.to_string();
+                    let doc_content: String = document.to_string();
 
-                    let mut regvec: Vec<&str> =
+                    let regvec: Vec<&str> =
                         reg.ruleMap.values().map(|e| e.expr.as_str()).collect();
 
-                    let mut contents: String = match find_and_replace(&doc_content, regvec) {
+                    let contents: String = match find_and_replace(&doc_content, regvec) {
                         Ok(res) => res.to_string(),
                         Err(e) => {
                             println!("Error {:?}", e);
