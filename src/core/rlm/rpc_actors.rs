@@ -18,7 +18,8 @@ pub mod rpc_actors{
     use mime;
     use std::io::Cursor;
     use ttl_cache::TtlCache;
-
+    use log::Level;
+    use log::{error, info, warn};
 
     #[derive(Debug,Eq, PartialEq, Serialize, Deserialize,Clone)]
     #[derive(Hash)]
@@ -111,12 +112,12 @@ pub mod rpc_actors{
             //println!("misses {:?}",self.cache.);
             body = match self.component_cache.get(&msg){
                 Some(resp)=>{
-                    //println!("Found for sendrequest {:?}",resp);
+                    info!("Found for sendrequest ");
                     resp.to_string()
                 },
                 None=> {
-
                     let mut b = String::default();
+                    info!("Requesting {:?}",rpc);
                     let resp = call(rpc);
                     if resp.ok() {
                         b = resp.into_string().unwrap();
@@ -124,9 +125,8 @@ pub mod rpc_actors{
                             self.component_cache.insert(msg.clone(),b.clone(), Duration::from_secs(rpc.ttl.into()));
                         }
                       } else {
-                        b = resp.status().to_string()+resp.status_line()
-                    }
-                               
+                        b = resp.status().to_string()+resp.status_line();
+                    }       
                     b
                 }
             };            
